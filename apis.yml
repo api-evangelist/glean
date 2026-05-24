@@ -165,6 +165,8 @@ common:
   url: https://developers.glean.com/changelog
 - type: Integrations
   url: https://www.glean.com/connectors
+- type: LLMsTxt
+  url: https://developers.glean.com/llms.txt
 integrations:
 - name: Google Workspace
 - name: Microsoft 365
