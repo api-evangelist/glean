@@ -1,0 +1,847 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Glean Client REST API",
+    "version": "0.9.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "search",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Run a unified, permission-aware search across connected sources",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/search",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Run a unified, permission-aware search across connected sources"
+        },
+        {
+          "info": {
+            "name": "Search across all content (admin scope, bypasses user ACLs)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/adminsearch"
+          },
+          "docs": "Search across all content (admin scope, bypasses user ACLs)"
+        },
+        {
+          "info": {
+            "name": "Get query autocompletion suggestions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/autocomplete"
+          },
+          "docs": "Get query autocompletion suggestions"
+        },
+        {
+          "info": {
+            "name": "Get personalized content recommendations for the user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/recommendations"
+          },
+          "docs": "Get personalized content recommendations for the user"
+        },
+        {
+          "info": {
+            "name": "Get the user's personalized activity feed",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/feed"
+          },
+          "docs": "Get the user's personalized activity feed"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "chat",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Send a chat message to the Glean assistant",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/chat"
+          },
+          "docs": "Send a chat message to the Glean assistant"
+        },
+        {
+          "info": {
+            "name": "Get a chat session by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/getchat"
+          },
+          "docs": "Get a chat session by id"
+        },
+        {
+          "info": {
+            "name": "List the user's chat sessions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/listchats"
+          },
+          "docs": "List the user's chat sessions"
+        },
+        {
+          "info": {
+            "name": "Delete one or more chat sessions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/deletechats"
+          },
+          "docs": "Delete one or more chat sessions"
+        },
+        {
+          "info": {
+            "name": "Delete all chat sessions for the user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/deleteallchats"
+          },
+          "docs": "Delete all chat sessions for the user"
+        },
+        {
+          "info": {
+            "name": "Upload files for use in chat context",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/uploadchatfiles"
+          },
+          "docs": "Upload files for use in chat context"
+        },
+        {
+          "info": {
+            "name": "List uploaded chat files",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/getchatfiles"
+          },
+          "docs": "List uploaded chat files"
+        },
+        {
+          "info": {
+            "name": "Delete uploaded chat files",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/deletechatfiles"
+          },
+          "docs": "Delete uploaded chat files"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "agents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get an agent definition",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/agents/:agent_id",
+            "params": [
+              {
+                "name": "agent_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get an agent definition"
+        },
+        {
+          "info": {
+            "name": "Get input/output schemas for an agent",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/agents/:agent_id/schemas",
+            "params": [
+              {
+                "name": "agent_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get input/output schemas for an agent"
+        },
+        {
+          "info": {
+            "name": "Search for agents",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/agents/search"
+          },
+          "docs": "Search for agents"
+        },
+        {
+          "info": {
+            "name": "Invoke an agent and wait for the final response",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/agents/runs/wait"
+          },
+          "docs": "Invoke an agent and wait for the final response"
+        },
+        {
+          "info": {
+            "name": "Invoke an agent and stream intermediate steps",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/agents/runs/stream"
+          },
+          "docs": "Invoke an agent and stream intermediate steps"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "documents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve document metadata by id or URL",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/getdocuments"
+          },
+          "docs": "Retrieve document metadata by id or URL"
+        },
+        {
+          "info": {
+            "name": "Retrieve documents matching facets",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/getdocumentsbyfacets"
+          },
+          "docs": "Retrieve documents matching facets"
+        },
+        {
+          "info": {
+            "name": "Get effective permissions for a document",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/getdocpermissions"
+          },
+          "docs": "Get effective permissions for a document"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "people",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Look up people in the knowledge graph",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/people"
+          },
+          "docs": "Look up people in the knowledge graph"
+        },
+        {
+          "info": {
+            "name": "Get a person's profile photo",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/people/:person_id/photo",
+            "params": [
+              {
+                "name": "person_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a person's profile photo"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "collections",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/createcollection"
+          },
+          "docs": "Create a collection"
+        },
+        {
+          "info": {
+            "name": "Edit a collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/editcollection"
+          },
+          "docs": "Edit a collection"
+        },
+        {
+          "info": {
+            "name": "Delete a collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/deletecollection"
+          },
+          "docs": "Delete a collection"
+        },
+        {
+          "info": {
+            "name": "Get a collection by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/getcollection"
+          },
+          "docs": "Get a collection by id"
+        },
+        {
+          "info": {
+            "name": "List collections visible to the user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/listcollections"
+          },
+          "docs": "List collections visible to the user"
+        },
+        {
+          "info": {
+            "name": "Add items to a collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/addcollectionitems"
+          },
+          "docs": "Add items to a collection"
+        },
+        {
+          "info": {
+            "name": "Edit a collection item",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/editcollectionitem"
+          },
+          "docs": "Edit a collection item"
+        },
+        {
+          "info": {
+            "name": "Remove an item from a collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/deletecollectionitem"
+          },
+          "docs": "Remove an item from a collection"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "answers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a curated answer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/createanswer"
+          },
+          "docs": "Create a curated answer"
+        },
+        {
+          "info": {
+            "name": "Edit a curated answer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/editanswer"
+          },
+          "docs": "Edit a curated answer"
+        },
+        {
+          "info": {
+            "name": "Delete a curated answer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/deleteanswer"
+          },
+          "docs": "Delete a curated answer"
+        },
+        {
+          "info": {
+            "name": "Get a curated answer by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/getanswer"
+          },
+          "docs": "Get a curated answer by id"
+        },
+        {
+          "info": {
+            "name": "List curated answers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/listanswers"
+          },
+          "docs": "List curated answers"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "announcements",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create an announcement",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/createannouncement"
+          },
+          "docs": "Create an announcement"
+        },
+        {
+          "info": {
+            "name": "Update an announcement",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/updateannouncement"
+          },
+          "docs": "Update an announcement"
+        },
+        {
+          "info": {
+            "name": "Delete an announcement",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/deleteannouncement"
+          },
+          "docs": "Delete an announcement"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "pins",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Pin a document",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/pin"
+          },
+          "docs": "Pin a document"
+        },
+        {
+          "info": {
+            "name": "Unpin a document",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/unpin"
+          },
+          "docs": "Unpin a document"
+        },
+        {
+          "info": {
+            "name": "Get a pin",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/getpin"
+          },
+          "docs": "Get a pin"
+        },
+        {
+          "info": {
+            "name": "Edit a pin",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/editpin"
+          },
+          "docs": "Edit a pin"
+        },
+        {
+          "info": {
+            "name": "List pins",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/listpins"
+          },
+          "docs": "List pins"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "shortcuts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a shortcut (go link)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/createshortcut"
+          },
+          "docs": "Create a shortcut (go link)"
+        },
+        {
+          "info": {
+            "name": "Update a shortcut",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/updateshortcut"
+          },
+          "docs": "Update a shortcut"
+        },
+        {
+          "info": {
+            "name": "Delete a shortcut",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/deleteshortcut"
+          },
+          "docs": "Delete a shortcut"
+        },
+        {
+          "info": {
+            "name": "Get a shortcut by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/getshortcut"
+          },
+          "docs": "Get a shortcut by id"
+        },
+        {
+          "info": {
+            "name": "List shortcuts",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/listshortcuts"
+          },
+          "docs": "List shortcuts"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "summarize",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Summarize content",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/summarize"
+          },
+          "docs": "Summarize content"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "insights",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve insights and analytics",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/insights"
+          },
+          "docs": "Retrieve insights and analytics"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "activity",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Submit activity signals (views, clicks, edits)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/activity"
+          },
+          "docs": "Submit activity signals (views, clicks, edits)"
+        },
+        {
+          "info": {
+            "name": "Submit user feedback",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/feedback"
+          },
+          "docs": "Submit user feedback"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "tools",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List available agent tools",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/tools/list"
+          },
+          "docs": "List available agent tools"
+        },
+        {
+          "info": {
+            "name": "Invoke an agent tool",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/tools/call"
+          },
+          "docs": "Invoke an agent tool"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "verification",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Record a verification on a document",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/verify"
+          },
+          "docs": "Record a verification on a document"
+        },
+        {
+          "info": {
+            "name": "List verifications",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/listverifications"
+          },
+          "docs": "List verifications"
+        },
+        {
+          "info": {
+            "name": "Add a verification reminder",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/addverificationreminder"
+          },
+          "docs": "Add a verification reminder"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "governance",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a data governance policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/governance/data/policies"
+          },
+          "docs": "Create a data governance policy"
+        },
+        {
+          "info": {
+            "name": "Get a governance policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/governance/data/policies/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a governance policy"
+        },
+        {
+          "info": {
+            "name": "Create a governance report",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/governance/data/reports"
+          },
+          "docs": "Create a governance report"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
