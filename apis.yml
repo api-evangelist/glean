@@ -4,7 +4,7 @@ description: Glean is an AI-powered work assistant and enterprise search platfor
   sources to provide unified search, generative answers, and autonomous agents grounded in enterprise knowledge. Glean exposes
   a Client API for end-user features (search, chat, agents, answers), an Indexing API for ingesting custom data sources, and
   Admin and Activity APIs for governance and observability.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/glean/refs/heads/main/apis.yml
 created: '2026-05-23'
 modified: '2026-05-23'
