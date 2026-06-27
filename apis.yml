@@ -143,7 +143,7 @@ common:
   url: https://developers.glean.com/
 - type: Documentation
   url: https://developers.glean.com/api-info/client/getting-started
-- type: SDK
+- type: SDKs
   url: https://developers.glean.com/sdks
 - type: GitHub
   url: https://github.com/gleanwork
@@ -165,7 +165,7 @@ common:
   url: https://developers.glean.com/changelog
 - type: Integrations
   url: https://www.glean.com/connectors
-- type: LLMsTxt
+- type: LlmsText
   url: https://developers.glean.com/llms.txt
 integrations:
 - name: Google Workspace
