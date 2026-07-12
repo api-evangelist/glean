@@ -1,0 +1,14 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/glean-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  bearerFormat: JWT
+  description: 'Glean API token, passed as `Authorization: Bearer <token>`'
+  sources:
+  - openapi/glean-openapi.yml

@@ -137,6 +137,14 @@ apis:
   - type: Documentation
     url: https://developers.glean.com/api-reference/client-api/governance
 common:
+- type: TrustCenter
+  url: security/glean-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/glean-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/glean-domain-security.yml
+- type: Authentication
+  url: authentication/glean-authentication.yml
 - type: Website
   url: https://www.glean.com/
 - type: Developer
