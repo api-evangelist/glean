@@ -2,18 +2,14 @@
   "repo": "glean",
   "feeds": [
     {
-      "source": "https://www.glean.com/blog",
-      "feed_url": "",
-      "saved": 3,
-      "method": "agent-scrape"
-    },
-    {
       "source": "https://github.com/gleanwork",
+      "feed_url": "https://github.com/gleanwork",
+      "title": "",
       "saved": 0,
-      "error": "not a blog feed"
+      "method": "none"
     }
   ],
-  "post_count": 10,
-  "fetched": "2026-06-27T12:44:57Z",
+  "post_count": 12,
+  "fetched": "2026-07-11T11:50:51Z",
   "agent_pulled": "2026-06-27"
 }
