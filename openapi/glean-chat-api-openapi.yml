@@ -1,0 +1,112 @@
+openapi: 3.1.0
+info:
+  title: Glean Client REST activity chat API
+  version: 0.9.0
+  description: 'Subset of Glean''s Client REST API. Glean exposes search, chat, agents,
+
+    answers, announcements, collections, documents, people, summarize,
+
+    insights, recommendations, tools, governance, and verification endpoints
+
+    against the customer''s Glean instance.
+
+
+    Derived from the public OpenAPI definition published at
+
+    https://gleanwork.github.io/open-api/specs/final/client_rest.yaml
+
+    '
+  contact:
+    name: Glean Developers
+    url: https://developers.glean.com/
+servers:
+- url: https://{instance}-be.glean.com/rest/api/v1
+  description: Glean customer instance
+  variables:
+    instance:
+      default: customer
+      description: Glean instance subdomain
+security:
+- bearerAuth: []
+tags:
+- name: chat
+paths:
+  /chat:
+    post:
+      tags:
+      - chat
+      summary: Send a chat message to the Glean assistant
+      operationId: chat
+      responses:
+        '200':
+          description: Chat response
+  /getchat:
+    post:
+      tags:
+      - chat
+      summary: Get a chat session by id
+      operationId: getChat
+      responses:
+        '200':
+          description: OK
+  /listchats:
+    post:
+      tags:
+      - chat
+      summary: List the user's chat sessions
+      operationId: listChats
+      responses:
+        '200':
+          description: OK
+  /deletechats:
+    post:
+      tags:
+      - chat
+      summary: Delete one or more chat sessions
+      operationId: deleteChats
+      responses:
+        '200':
+          description: Deleted
+  /deleteallchats:
+    post:
+      tags:
+      - chat
+      summary: Delete all chat sessions for the user
+      operationId: deleteAllChats
+      responses:
+        '200':
+          description: Deleted
+  /uploadchatfiles:
+    post:
+      tags:
+      - chat
+      summary: Upload files for use in chat context
+      operationId: uploadChatFiles
+      responses:
+        '200':
+          description: OK
+  /getchatfiles:
+    post:
+      tags:
+      - chat
+      summary: List uploaded chat files
+      operationId: getChatFiles
+      responses:
+        '200':
+          description: OK
+  /deletechatfiles:
+    post:
+      tags:
+      - chat
+      summary: Delete uploaded chat files
+      operationId: deleteChatFiles
+      responses:
+        '200':
+          description: OK
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: 'Glean API token, passed as `Authorization: Bearer <token>`'

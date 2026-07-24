@@ -1,0 +1,85 @@
+openapi: 3.1.0
+info:
+  title: Glean Client REST activity shortcuts API
+  version: 0.9.0
+  description: 'Subset of Glean''s Client REST API. Glean exposes search, chat, agents,
+
+    answers, announcements, collections, documents, people, summarize,
+
+    insights, recommendations, tools, governance, and verification endpoints
+
+    against the customer''s Glean instance.
+
+
+    Derived from the public OpenAPI definition published at
+
+    https://gleanwork.github.io/open-api/specs/final/client_rest.yaml
+
+    '
+  contact:
+    name: Glean Developers
+    url: https://developers.glean.com/
+servers:
+- url: https://{instance}-be.glean.com/rest/api/v1
+  description: Glean customer instance
+  variables:
+    instance:
+      default: customer
+      description: Glean instance subdomain
+security:
+- bearerAuth: []
+tags:
+- name: shortcuts
+paths:
+  /createshortcut:
+    post:
+      tags:
+      - shortcuts
+      summary: Create a shortcut (go link)
+      operationId: createShortcut
+      responses:
+        '200':
+          description: OK
+  /updateshortcut:
+    post:
+      tags:
+      - shortcuts
+      summary: Update a shortcut
+      operationId: updateShortcut
+      responses:
+        '200':
+          description: OK
+  /deleteshortcut:
+    post:
+      tags:
+      - shortcuts
+      summary: Delete a shortcut
+      operationId: deleteShortcut
+      responses:
+        '200':
+          description: OK
+  /getshortcut:
+    post:
+      tags:
+      - shortcuts
+      summary: Get a shortcut by id
+      operationId: getShortcut
+      responses:
+        '200':
+          description: OK
+  /listshortcuts:
+    post:
+      tags:
+      - shortcuts
+      summary: List shortcuts
+      operationId: listShortcuts
+      responses:
+        '200':
+          description: OK
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: 'Glean API token, passed as `Authorization: Bearer <token>`'

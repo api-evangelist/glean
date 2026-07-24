@@ -1,0 +1,85 @@
+openapi: 3.1.0
+info:
+  title: Glean Client REST activity pins API
+  version: 0.9.0
+  description: 'Subset of Glean''s Client REST API. Glean exposes search, chat, agents,
+
+    answers, announcements, collections, documents, people, summarize,
+
+    insights, recommendations, tools, governance, and verification endpoints
+
+    against the customer''s Glean instance.
+
+
+    Derived from the public OpenAPI definition published at
+
+    https://gleanwork.github.io/open-api/specs/final/client_rest.yaml
+
+    '
+  contact:
+    name: Glean Developers
+    url: https://developers.glean.com/
+servers:
+- url: https://{instance}-be.glean.com/rest/api/v1
+  description: Glean customer instance
+  variables:
+    instance:
+      default: customer
+      description: Glean instance subdomain
+security:
+- bearerAuth: []
+tags:
+- name: pins
+paths:
+  /pin:
+    post:
+      tags:
+      - pins
+      summary: Pin a document
+      operationId: pin
+      responses:
+        '200':
+          description: OK
+  /unpin:
+    post:
+      tags:
+      - pins
+      summary: Unpin a document
+      operationId: unpin
+      responses:
+        '200':
+          description: OK
+  /getpin:
+    post:
+      tags:
+      - pins
+      summary: Get a pin
+      operationId: getPin
+      responses:
+        '200':
+          description: OK
+  /editpin:
+    post:
+      tags:
+      - pins
+      summary: Edit a pin
+      operationId: editPin
+      responses:
+        '200':
+          description: OK
+  /listpins:
+    post:
+      tags:
+      - pins
+      summary: List pins
+      operationId: listPins
+      responses:
+        '200':
+          description: OK
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: 'Glean API token, passed as `Authorization: Bearer <token>`'

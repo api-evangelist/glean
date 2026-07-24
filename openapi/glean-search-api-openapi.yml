@@ -1,0 +1,97 @@
+openapi: 3.1.0
+info:
+  title: Glean Client REST activity search API
+  version: 0.9.0
+  description: 'Subset of Glean''s Client REST API. Glean exposes search, chat, agents,
+
+    answers, announcements, collections, documents, people, summarize,
+
+    insights, recommendations, tools, governance, and verification endpoints
+
+    against the customer''s Glean instance.
+
+
+    Derived from the public OpenAPI definition published at
+
+    https://gleanwork.github.io/open-api/specs/final/client_rest.yaml
+
+    '
+  contact:
+    name: Glean Developers
+    url: https://developers.glean.com/
+servers:
+- url: https://{instance}-be.glean.com/rest/api/v1
+  description: Glean customer instance
+  variables:
+    instance:
+      default: customer
+      description: Glean instance subdomain
+security:
+- bearerAuth: []
+tags:
+- name: search
+paths:
+  /search:
+    post:
+      tags:
+      - search
+      summary: Run a unified, permission-aware search across connected sources
+      operationId: search
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Search results
+        '401':
+          description: Not authorized
+        '422':
+          description: Invalid query
+        '429':
+          description: Too many requests
+  /adminsearch:
+    post:
+      tags:
+      - search
+      summary: Search across all content (admin scope, bypasses user ACLs)
+      operationId: adminSearch
+      responses:
+        '200':
+          description: OK
+  /autocomplete:
+    post:
+      tags:
+      - search
+      summary: Get query autocompletion suggestions
+      operationId: autocomplete
+      responses:
+        '200':
+          description: OK
+  /recommendations:
+    post:
+      tags:
+      - search
+      summary: Get personalized content recommendations for the user
+      operationId: recommendations
+      responses:
+        '200':
+          description: OK
+  /feed:
+    post:
+      tags:
+      - search
+      summary: Get the user's personalized activity feed
+      operationId: feed
+      responses:
+        '200':
+          description: OK
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: 'Glean API token, passed as `Authorization: Bearer <token>`'

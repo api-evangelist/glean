@@ -1,0 +1,97 @@
+openapi: 3.1.0
+info:
+  title: Glean Client REST activity agents API
+  version: 0.9.0
+  description: 'Subset of Glean''s Client REST API. Glean exposes search, chat, agents,
+
+    answers, announcements, collections, documents, people, summarize,
+
+    insights, recommendations, tools, governance, and verification endpoints
+
+    against the customer''s Glean instance.
+
+
+    Derived from the public OpenAPI definition published at
+
+    https://gleanwork.github.io/open-api/specs/final/client_rest.yaml
+
+    '
+  contact:
+    name: Glean Developers
+    url: https://developers.glean.com/
+servers:
+- url: https://{instance}-be.glean.com/rest/api/v1
+  description: Glean customer instance
+  variables:
+    instance:
+      default: customer
+      description: Glean instance subdomain
+security:
+- bearerAuth: []
+tags:
+- name: agents
+paths:
+  /agents/{agent_id}:
+    get:
+      tags:
+      - agents
+      summary: Get an agent definition
+      operationId: getAgent
+      parameters:
+      - name: agent_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /agents/{agent_id}/schemas:
+    get:
+      tags:
+      - agents
+      summary: Get input/output schemas for an agent
+      operationId: getAgentSchemas
+      parameters:
+      - name: agent_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /agents/search:
+    post:
+      tags:
+      - agents
+      summary: Search for agents
+      operationId: searchAgents
+      responses:
+        '200':
+          description: OK
+  /agents/runs/wait:
+    post:
+      tags:
+      - agents
+      summary: Invoke an agent and wait for the final response
+      operationId: runAgentWait
+      responses:
+        '200':
+          description: OK
+  /agents/runs/stream:
+    post:
+      tags:
+      - agents
+      summary: Invoke an agent and stream intermediate steps
+      operationId: runAgentStream
+      responses:
+        '200':
+          description: OK
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: 'Glean API token, passed as `Authorization: Bearer <token>`'

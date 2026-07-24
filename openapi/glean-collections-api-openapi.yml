@@ -1,0 +1,112 @@
+openapi: 3.1.0
+info:
+  title: Glean Client REST activity collections API
+  version: 0.9.0
+  description: 'Subset of Glean''s Client REST API. Glean exposes search, chat, agents,
+
+    answers, announcements, collections, documents, people, summarize,
+
+    insights, recommendations, tools, governance, and verification endpoints
+
+    against the customer''s Glean instance.
+
+
+    Derived from the public OpenAPI definition published at
+
+    https://gleanwork.github.io/open-api/specs/final/client_rest.yaml
+
+    '
+  contact:
+    name: Glean Developers
+    url: https://developers.glean.com/
+servers:
+- url: https://{instance}-be.glean.com/rest/api/v1
+  description: Glean customer instance
+  variables:
+    instance:
+      default: customer
+      description: Glean instance subdomain
+security:
+- bearerAuth: []
+tags:
+- name: collections
+paths:
+  /createcollection:
+    post:
+      tags:
+      - collections
+      summary: Create a collection
+      operationId: createCollection
+      responses:
+        '200':
+          description: OK
+  /editcollection:
+    post:
+      tags:
+      - collections
+      summary: Edit a collection
+      operationId: editCollection
+      responses:
+        '200':
+          description: OK
+  /deletecollection:
+    post:
+      tags:
+      - collections
+      summary: Delete a collection
+      operationId: deleteCollection
+      responses:
+        '200':
+          description: OK
+  /getcollection:
+    post:
+      tags:
+      - collections
+      summary: Get a collection by id
+      operationId: getCollection
+      responses:
+        '200':
+          description: OK
+  /listcollections:
+    post:
+      tags:
+      - collections
+      summary: List collections visible to the user
+      operationId: listCollections
+      responses:
+        '200':
+          description: OK
+  /addcollectionitems:
+    post:
+      tags:
+      - collections
+      summary: Add items to a collection
+      operationId: addCollectionItems
+      responses:
+        '200':
+          description: OK
+  /editcollectionitem:
+    post:
+      tags:
+      - collections
+      summary: Edit a collection item
+      operationId: editCollectionItem
+      responses:
+        '200':
+          description: OK
+  /deletecollectionitem:
+    post:
+      tags:
+      - collections
+      summary: Remove an item from a collection
+      operationId: deleteCollectionItem
+      responses:
+        '200':
+          description: OK
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: 'Glean API token, passed as `Authorization: Bearer <token>`'
