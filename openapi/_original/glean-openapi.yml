@@ -1,0 +1,444 @@
+openapi: 3.1.0
+info:
+  title: Glean Client REST API
+  version: 0.9.0
+  description: |
+    Subset of Glean's Client REST API. Glean exposes search, chat, agents,
+    answers, announcements, collections, documents, people, summarize,
+    insights, recommendations, tools, governance, and verification endpoints
+    against the customer's Glean instance.
+
+    Derived from the public OpenAPI definition published at
+    https://gleanwork.github.io/open-api/specs/final/client_rest.yaml
+  contact:
+    name: Glean Developers
+    url: https://developers.glean.com/
+servers:
+  - url: https://{instance}-be.glean.com/rest/api/v1
+    description: Glean customer instance
+    variables:
+      instance:
+        default: customer
+        description: Glean instance subdomain
+security:
+  - bearerAuth: []
+tags:
+  - name: search
+  - name: chat
+  - name: agents
+  - name: documents
+  - name: people
+  - name: collections
+  - name: answers
+  - name: announcements
+  - name: pins
+  - name: shortcuts
+  - name: summarize
+  - name: insights
+  - name: activity
+  - name: governance
+  - name: tools
+  - name: verification
+paths:
+  /search:
+    post:
+      tags: [search]
+      summary: Run a unified, permission-aware search across connected sources
+      operationId: search
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object }
+      responses:
+        '200': { description: Search results }
+        '401': { description: Not authorized }
+        '422': { description: Invalid query }
+        '429': { description: Too many requests }
+  /adminsearch:
+    post:
+      tags: [search]
+      summary: Search across all content (admin scope, bypasses user ACLs)
+      operationId: adminSearch
+      responses: { '200': { description: OK } }
+  /autocomplete:
+    post:
+      tags: [search]
+      summary: Get query autocompletion suggestions
+      operationId: autocomplete
+      responses: { '200': { description: OK } }
+  /recommendations:
+    post:
+      tags: [search]
+      summary: Get personalized content recommendations for the user
+      operationId: recommendations
+      responses: { '200': { description: OK } }
+  /feed:
+    post:
+      tags: [search]
+      summary: Get the user's personalized activity feed
+      operationId: feed
+      responses: { '200': { description: OK } }
+  /chat:
+    post:
+      tags: [chat]
+      summary: Send a chat message to the Glean assistant
+      operationId: chat
+      responses: { '200': { description: Chat response } }
+  /getchat:
+    post:
+      tags: [chat]
+      summary: Get a chat session by id
+      operationId: getChat
+      responses: { '200': { description: OK } }
+  /listchats:
+    post:
+      tags: [chat]
+      summary: List the user's chat sessions
+      operationId: listChats
+      responses: { '200': { description: OK } }
+  /deletechats:
+    post:
+      tags: [chat]
+      summary: Delete one or more chat sessions
+      operationId: deleteChats
+      responses: { '200': { description: Deleted } }
+  /deleteallchats:
+    post:
+      tags: [chat]
+      summary: Delete all chat sessions for the user
+      operationId: deleteAllChats
+      responses: { '200': { description: Deleted } }
+  /uploadchatfiles:
+    post:
+      tags: [chat]
+      summary: Upload files for use in chat context
+      operationId: uploadChatFiles
+      responses: { '200': { description: OK } }
+  /getchatfiles:
+    post:
+      tags: [chat]
+      summary: List uploaded chat files
+      operationId: getChatFiles
+      responses: { '200': { description: OK } }
+  /deletechatfiles:
+    post:
+      tags: [chat]
+      summary: Delete uploaded chat files
+      operationId: deleteChatFiles
+      responses: { '200': { description: OK } }
+  /agents/{agent_id}:
+    get:
+      tags: [agents]
+      summary: Get an agent definition
+      operationId: getAgent
+      parameters:
+        - name: agent_id
+          in: path
+          required: true
+          schema: { type: string }
+      responses: { '200': { description: OK } }
+  /agents/{agent_id}/schemas:
+    get:
+      tags: [agents]
+      summary: Get input/output schemas for an agent
+      operationId: getAgentSchemas
+      parameters:
+        - name: agent_id
+          in: path
+          required: true
+          schema: { type: string }
+      responses: { '200': { description: OK } }
+  /agents/search:
+    post:
+      tags: [agents]
+      summary: Search for agents
+      operationId: searchAgents
+      responses: { '200': { description: OK } }
+  /agents/runs/wait:
+    post:
+      tags: [agents]
+      summary: Invoke an agent and wait for the final response
+      operationId: runAgentWait
+      responses: { '200': { description: OK } }
+  /agents/runs/stream:
+    post:
+      tags: [agents]
+      summary: Invoke an agent and stream intermediate steps
+      operationId: runAgentStream
+      responses: { '200': { description: OK } }
+  /getdocuments:
+    post:
+      tags: [documents]
+      summary: Retrieve document metadata by id or URL
+      operationId: getDocuments
+      responses: { '200': { description: OK } }
+  /getdocumentsbyfacets:
+    post:
+      tags: [documents]
+      summary: Retrieve documents matching facets
+      operationId: getDocumentsByFacets
+      responses: { '200': { description: OK } }
+  /getdocpermissions:
+    post:
+      tags: [documents]
+      summary: Get effective permissions for a document
+      operationId: getDocPermissions
+      responses: { '200': { description: OK } }
+  /people:
+    post:
+      tags: [people]
+      summary: Look up people in the knowledge graph
+      operationId: people
+      responses: { '200': { description: OK } }
+  /people/{person_id}/photo:
+    get:
+      tags: [people]
+      summary: Get a person's profile photo
+      operationId: getPersonPhoto
+      parameters:
+        - name: person_id
+          in: path
+          required: true
+          schema: { type: string }
+      responses: { '200': { description: OK } }
+  /createcollection:
+    post:
+      tags: [collections]
+      summary: Create a collection
+      operationId: createCollection
+      responses: { '200': { description: OK } }
+  /editcollection:
+    post:
+      tags: [collections]
+      summary: Edit a collection
+      operationId: editCollection
+      responses: { '200': { description: OK } }
+  /deletecollection:
+    post:
+      tags: [collections]
+      summary: Delete a collection
+      operationId: deleteCollection
+      responses: { '200': { description: OK } }
+  /getcollection:
+    post:
+      tags: [collections]
+      summary: Get a collection by id
+      operationId: getCollection
+      responses: { '200': { description: OK } }
+  /listcollections:
+    post:
+      tags: [collections]
+      summary: List collections visible to the user
+      operationId: listCollections
+      responses: { '200': { description: OK } }
+  /addcollectionitems:
+    post:
+      tags: [collections]
+      summary: Add items to a collection
+      operationId: addCollectionItems
+      responses: { '200': { description: OK } }
+  /editcollectionitem:
+    post:
+      tags: [collections]
+      summary: Edit a collection item
+      operationId: editCollectionItem
+      responses: { '200': { description: OK } }
+  /deletecollectionitem:
+    post:
+      tags: [collections]
+      summary: Remove an item from a collection
+      operationId: deleteCollectionItem
+      responses: { '200': { description: OK } }
+  /createanswer:
+    post:
+      tags: [answers]
+      summary: Create a curated answer
+      operationId: createAnswer
+      responses: { '200': { description: OK } }
+  /editanswer:
+    post:
+      tags: [answers]
+      summary: Edit a curated answer
+      operationId: editAnswer
+      responses: { '200': { description: OK } }
+  /deleteanswer:
+    post:
+      tags: [answers]
+      summary: Delete a curated answer
+      operationId: deleteAnswer
+      responses: { '200': { description: OK } }
+  /getanswer:
+    post:
+      tags: [answers]
+      summary: Get a curated answer by id
+      operationId: getAnswer
+      responses: { '200': { description: OK } }
+  /listanswers:
+    post:
+      tags: [answers]
+      summary: List curated answers
+      operationId: listAnswers
+      responses: { '200': { description: OK } }
+  /createannouncement:
+    post:
+      tags: [announcements]
+      summary: Create an announcement
+      operationId: createAnnouncement
+      responses: { '200': { description: OK } }
+  /updateannouncement:
+    post:
+      tags: [announcements]
+      summary: Update an announcement
+      operationId: updateAnnouncement
+      responses: { '200': { description: OK } }
+  /deleteannouncement:
+    post:
+      tags: [announcements]
+      summary: Delete an announcement
+      operationId: deleteAnnouncement
+      responses: { '200': { description: OK } }
+  /pin:
+    post:
+      tags: [pins]
+      summary: Pin a document
+      operationId: pin
+      responses: { '200': { description: OK } }
+  /unpin:
+    post:
+      tags: [pins]
+      summary: Unpin a document
+      operationId: unpin
+      responses: { '200': { description: OK } }
+  /getpin:
+    post:
+      tags: [pins]
+      summary: Get a pin
+      operationId: getPin
+      responses: { '200': { description: OK } }
+  /editpin:
+    post:
+      tags: [pins]
+      summary: Edit a pin
+      operationId: editPin
+      responses: { '200': { description: OK } }
+  /listpins:
+    post:
+      tags: [pins]
+      summary: List pins
+      operationId: listPins
+      responses: { '200': { description: OK } }
+  /createshortcut:
+    post:
+      tags: [shortcuts]
+      summary: Create a shortcut (go link)
+      operationId: createShortcut
+      responses: { '200': { description: OK } }
+  /updateshortcut:
+    post:
+      tags: [shortcuts]
+      summary: Update a shortcut
+      operationId: updateShortcut
+      responses: { '200': { description: OK } }
+  /deleteshortcut:
+    post:
+      tags: [shortcuts]
+      summary: Delete a shortcut
+      operationId: deleteShortcut
+      responses: { '200': { description: OK } }
+  /getshortcut:
+    post:
+      tags: [shortcuts]
+      summary: Get a shortcut by id
+      operationId: getShortcut
+      responses: { '200': { description: OK } }
+  /listshortcuts:
+    post:
+      tags: [shortcuts]
+      summary: List shortcuts
+      operationId: listShortcuts
+      responses: { '200': { description: OK } }
+  /summarize:
+    post:
+      tags: [summarize]
+      summary: Summarize content
+      operationId: summarize
+      responses: { '200': { description: OK } }
+  /insights:
+    post:
+      tags: [insights]
+      summary: Retrieve insights and analytics
+      operationId: insights
+      responses: { '200': { description: OK } }
+  /activity:
+    post:
+      tags: [activity]
+      summary: Submit activity signals (views, clicks, edits)
+      operationId: activity
+      responses: { '200': { description: OK } }
+  /feedback:
+    post:
+      tags: [activity]
+      summary: Submit user feedback
+      operationId: feedback
+      responses: { '200': { description: OK } }
+  /tools/list:
+    post:
+      tags: [tools]
+      summary: List available agent tools
+      operationId: listTools
+      responses: { '200': { description: OK } }
+  /tools/call:
+    post:
+      tags: [tools]
+      summary: Invoke an agent tool
+      operationId: callTool
+      responses: { '200': { description: OK } }
+  /verify:
+    post:
+      tags: [verification]
+      summary: Record a verification on a document
+      operationId: verify
+      responses: { '200': { description: OK } }
+  /listverifications:
+    post:
+      tags: [verification]
+      summary: List verifications
+      operationId: listVerifications
+      responses: { '200': { description: OK } }
+  /addverificationreminder:
+    post:
+      tags: [verification]
+      summary: Add a verification reminder
+      operationId: addVerificationReminder
+      responses: { '200': { description: OK } }
+  /governance/data/policies:
+    post:
+      tags: [governance]
+      summary: Create a data governance policy
+      operationId: createGovernancePolicy
+      responses: { '200': { description: OK } }
+  /governance/data/policies/{id}:
+    get:
+      tags: [governance]
+      summary: Get a governance policy
+      operationId: getGovernancePolicy
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses: { '200': { description: OK } }
+  /governance/data/reports:
+    post:
+      tags: [governance]
+      summary: Create a governance report
+      operationId: createGovernanceReport
+      responses: { '200': { description: OK } }
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: "Glean API token, passed as `Authorization: Bearer <token>`"
