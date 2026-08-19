@@ -1,0 +1,686 @@
+# Glean Developer
+
+> Glean Developer
+
+- [Glean Developer](/index.md)
+
+## oauth
+
+
+### callback
+
+- [Signing in…](/oauth/callback.md)
+
+## api
+
+Choose the right Glean API for your integration.
+
+- [Build with Glean APIs](/api.md): Choose the right Glean API for your integration.
+
+### client-api
+
+Build user-facing applications with Glean's existing Client API capabilities.
+
+- [Client API](/api/client-api.md): Build user-facing applications with Glean's existing Client API capabilities.
+- [Report document activity](/api/client-api/activity/activity.md): Report user activity that occurs on indexed documents such as viewing or editing. This signal improves search quality.
+- [Report client activity](/api/client-api/activity/feedback.md): Report events that happen to results within a Glean client UI, such as search result views and clicks.  This signal improves search quality.
+- [Activity API](/api/client-api/activity/overview.md): <ApiOverview
+- [Create an agent](/api/client-api/agents/create-agent.md): Create an agent.
+- [Create an agent run and stream the response](/api/client-api/agents/create-and-stream-run.md): Executes an [agent](https://developers.glean.com/agents/agents-api) run and returns the result as a stream of server-sent events (SSE). **Note**: If the agent uses an input form trigger, all form fields (including optional fields) must be included in the `input` object.
+- [Create an agent run and wait for the response](/api/client-api/agents/create-and-wait-run.md): Executes an [agent](https://developers.glean.com/agents/agents-api) run and returns the final response. **Note**: If the agent uses an input form trigger, all form fields (including optional fields) must be included in the `input` object.
+- [Edit an agent](/api/client-api/agents/edit-agent.md): Creates a draft or publishes an [agent](https://developers.glean.com/agents/agents-api). Use `isDraft=true` to save a draft, or `isDraft=false` (or omit) to publish immediately. Only draft and publish modes are supported.
+- [Retrieve an agent](/api/client-api/agents/get-agent.md): Returns details of an [agent](https://developers.glean.com/agents/agents-api) created in the Agent Builder.
+- [List an agent's schemas](/api/client-api/agents/get-agent-schemas.md): Return [agent](https://developers.glean.com/agents/agents-api)'s input and output schemas. You can use these schemas to detect changes to an agent's input or output structure.
+- [Import an agent](/api/client-api/agents/import-agent.md): Imports an [agent](https://developers.glean.com/agents/agents-api) from its on-disk folder representation (spec.yaml, instructions.md, skills/, subagents/) packaged as a zip, and creates or updates the agent. Inverse of the export flow: the folder-to-schema conversion runs server-side. The bundle must contain only regular files; symlinks are resolved by the caller at packaging time.
+- [Agents API Overview](/api/client-api/agents/overview.md): Programmatic control and integration with Glean agents
+- [Search agents](/api/client-api/agents/search-agents.md): Search for [agents](https://developers.glean.com/agents/agents-api) by agent name.
+- [Create Announcement](/api/client-api/announcements/createannouncement.md): Create a textual announcement visible to some set of users based on department and location.
+- [Delete Announcement](/api/client-api/announcements/deleteannouncement.md): Delete an existing user-generated announcement.
+- [Announcements API](/api/client-api/announcements/overview.md): <ApiOverview
+- [Update Announcement](/api/client-api/announcements/updateannouncement.md): Update a textual announcement visible to some set of users based on department and location.
+- [Create Answer](/api/client-api/answers/createanswer.md): Create a user-generated Answer that contains a question and answer.
+- [Delete Answer](/api/client-api/answers/deleteanswer.md): Delete an existing user-generated Answer.
+- [Update Answer](/api/client-api/answers/editanswer.md): Update an existing user-generated Answer.
+- [Read Answer](/api/client-api/answers/getanswer.md): Read the details of a particular Answer given its ID.
+- [List Answers](/api/client-api/answers/listanswers.md): List Answers created by the current user.
+- [Answers API](/api/client-api/answers/overview.md): <ApiOverview
+- [Check datasource authorization](/api/client-api/authentication/checkdatasourceauth.md): Returns all datasource instances that require per-user OAuth authorization
+- [Create authentication token](/api/client-api/authentication/createauthtoken.md): Creates an authentication token for the authenticated user. These are
+- [Authentication API](/api/client-api/authentication/overview.md): <ApiOverview
+- [Chat](/api/client-api/chat/chat.md): Have a conversation with Glean AI.
+- [Chat](/api/client-api/chat/chat-stream.md): Have a conversation with Glean AI.
+- [Deletes all saved Chats owned by a user](/api/client-api/chat/deleteallchats.md): Deletes all saved Chats a user has had and all their contained conversational content.
+- [Delete files uploaded by a user for chat](/api/client-api/chat/deletechatfiles.md): Delete files uploaded by a user for Chat.
+- [Deletes saved Chats](/api/client-api/chat/deletechats.md): Deletes saved Chats and all their contained conversational content.
+- [Download a chat file](/api/client-api/chat/get-chat-file.md): Download the raw content of a file generated or uploaded during a chat session (for example, an image produced by the assistant). Returns the file bytes with a Content-Type header matching the file's MIME type.
+- [Retrieves a Chat](/api/client-api/chat/getchat.md): Retrieves the chat history between Glean Assistant and the user for a given Chat.
+- [Gets the metadata for a custom Chat application](/api/client-api/chat/getchatapplication.md): Gets the Chat application details for the specified application ID.
+- [Get files uploaded by a user for Chat](/api/client-api/chat/getchatfiles.md): Get files uploaded by a user for Chat.
+- [Retrieves all saved Chats](/api/client-api/chat/listchats.md): Retrieves all the saved Chats between Glean Assistant and the user. The returned Chats contain only metadata and no conversational content.
+- [Chat API](/api/client-api/chat/overview.md): <ApiOverview
+- [Upload files for Chat](/api/client-api/chat/uploadchatfiles.md): Upload files for Chat.
+- [Add Collection item](/api/client-api/collections/addcollectionitems.md): Add items to a Collection.
+- [Create Collection](/api/client-api/collections/createcollection.md): Create a publicly visible (empty) Collection of documents.
+- [Delete Collection](/api/client-api/collections/deletecollection.md): Delete a Collection given the Collection's ID.
+- [Delete Collection item](/api/client-api/collections/deletecollectionitem.md): Delete a single item from a Collection.
+- [Update Collection](/api/client-api/collections/editcollection.md): Update the properties of an existing Collection.
+- [Update Collection item](/api/client-api/collections/editcollectionitem.md): Update the URL, Glean Document ID, description of an item within a Collection given its ID.
+- [Read Collection](/api/client-api/collections/getcollection.md): Read the details of a Collection given its ID. Does not fetch items in this Collection.
+- [List Collections](/api/client-api/collections/listcollections.md): List all existing Collections.
+- [Collections API](/api/client-api/collections/overview.md): <ApiOverview
+- [Read document permissions](/api/client-api/documents/getdocpermissions.md): Read the emails of all users who have access to the given document.
+- [Read documents](/api/client-api/documents/getdocuments.md): Read the documents including metadata (does not include enhanced metadata via `/documentmetadata`) for the given list of Glean Document IDs or URLs specified in the request.
+- [Read documents by facets](/api/client-api/documents/getdocumentsbyfacets.md): Read the documents including metadata (does not include enhanced metadata via `/documentmetadata`) macthing the given facet conditions.
+- [Documents API](/api/client-api/documents/overview.md): <ApiOverview
+- [Get person photo](/api/client-api/entities/get-person-photo.md): Returns the profile photo bytes for a person whose photo is stored in Glean (crawled from an identity source or user-uploaded via admin console). Photos hosted externally (e.g. Slack CDN) are not served by this endpoint; callers should follow the photoUrl from /people or /listentities directly. Responses include a Cache-Control header (max-age=3600) to reduce redundant fetches.
+- [List entities](/api/client-api/entities/listentities.md): List some set of details for all entities that fit the given criteria and return in the requested order. Does not support negation in filters, assumes relation type EQUALS. There is a limit of 10000 entities that can be retrieved via this endpoint, except when using FULL_DIRECTORY request type for people entities.
+- [Entities API](/api/client-api/entities/overview.md): <ApiOverview
+- [Read people](/api/client-api/entities/people.md): Read people details for the given IDs.
+- [Creates findings export](/api/client-api/governance/createfindingsexport.md): Creates a new DLP findings export job.
+- [Creates new policy](/api/client-api/governance/createpolicy.md): Creates a new policy with specified specifications and returns its id.
+- [Creates new one-time report](/api/client-api/governance/createreport.md): Creates a new one-time report and executes its batch job.
+- [Deletes findings export](/api/client-api/governance/deletefindingsexport.md): Deletes a DLP findings export.
+- [Downloads findings export](/api/client-api/governance/downloadfindingsexport.md): Downloads a DLP findings export as a CSV file.
+- [Downloads violations CSV for policy](/api/client-api/governance/downloadpolicycsv.md): Downloads CSV violations report for a specific policy id. This does not support continuous policies.
+- [Downloads violations CSV for report](/api/client-api/governance/downloadreportcsv.md): Downloads CSV violations report for a specific report id.
+- [Fetches documents visibility](/api/client-api/governance/getdocvisibility.md): Fetches the visibility override status of the documents passed.
+- [Gets specified policy](/api/client-api/governance/getpolicy.md): Fetches the specified policy version, or the latest if no version is provided.
+- [Fetches report run status](/api/client-api/governance/getreportstatus.md): Fetches the status of the run corresponding to the report-id.
+- [Lists findings exports](/api/client-api/governance/listfindingsexports.md): Lists all DLP findings exports.
+- [Lists policies](/api/client-api/governance/listpolicies.md): Lists policies with filtering.
+- [Governance API](/api/client-api/governance/overview.md): The Governance API enables administrators to create and manage data governance policies, generate compliance reports, and maintain oversight of content access and usage within your organization.
+- [Hide or unhide docs](/api/client-api/governance/setdocvisibility.md): Sets the visibility-override state of the documents specified, effectively hiding or un-hiding documents.
+- [Updates an existing policy](/api/client-api/governance/updatepolicy.md): Updates an existing policy.
+- [Get insights](/api/client-api/insights/insights.md): Gets the aggregate usage insights data displayed in the Insights Dashboards.
+- [Insights API](/api/client-api/insights/overview.md): <ApiOverview
+- [Read messages](/api/client-api/messages/messages.md): Retrieves list of messages from messaging/chat datasources (e.g. Slack, Teams).
+- [Messages API](/api/client-api/messages/overview.md): <ApiOverview
+- [Update pin](/api/client-api/pins/editpin.md): Update an existing user-generated pin.
+- [Read pin](/api/client-api/pins/getpin.md): Read pin details given its ID.
+- [List pins](/api/client-api/pins/listpins.md): Lists all pins.
+- [Pins API](/api/client-api/pins/overview.md): <ApiOverview
+- [Create pin](/api/client-api/pins/pin.md): Pin a document as a result for a given search query.Pin results that are known to be a good match.
+- [Delete pin](/api/client-api/pins/unpin.md): Unpin a previously pinned result.
+- [Search the index (admin)](/api/client-api/search/adminsearch.md): Retrieves results for search query without respect for permissions. This is available only to privileged users.
+- [Autocomplete](/api/client-api/search/autocomplete.md): Retrieve query suggestions, operators and documents for the given partially typed query.
+- [Feed of documents and events](/api/client-api/search/feed.md): The personalized feed/home includes different types of contents including suggestions, recents, calendar events and many more.
+- [Search API](/api/client-api/search/overview.md): <ApiOverview
+- [Recommend documents](/api/client-api/search/recommendations.md): Retrieve recommended documents for the given URL or Glean Document ID.
+- [Search](/api/client-api/search/search.md): Retrieve results from the index for the given query and filters.
+- [Create shortcut](/api/client-api/shortcuts/createshortcut.md): Create a user-generated shortcut that contains an alias and destination URL.
+- [Delete shortcut](/api/client-api/shortcuts/deleteshortcut.md): Delete an existing user-generated shortcut.
+- [Read shortcut](/api/client-api/shortcuts/getshortcut.md): Read a particular shortcut's details given its ID.
+- [List shortcuts](/api/client-api/shortcuts/listshortcuts.md): List shortcuts editable/owned by the currently authenticated user.
+- [Shortcuts API](/api/client-api/shortcuts/overview.md): <ApiOverview
+- [Update shortcut](/api/client-api/shortcuts/updateshortcut.md): Updates the shortcut with the given ID.
+- [Summarize API](/api/client-api/summarize/overview.md): <ApiOverview
+- [Summarize documents](/api/client-api/summarize/summarize.md): Generate an AI summary of the requested documents.
+- [Start the OAuth authorization flow for an action pack.](/api/client-api/tools/authorize-action-pack.md): Starts the third-party OAuth flow for the specified action pack and returns the
+- [Start the OAuth authorization flow for a tool server.](/api/client-api/tools/authorize-tool-server.md): Initiates the third-party OAuth flow for the specified tool server and returns the
+- [Execute the specified tool](/api/client-api/tools/execute-the-specified-tool.md): Execute the specified tool with provided parameters
+- [Get end-user authentication status for an action pack.](/api/client-api/tools/get-action-pack-auth-status.md): Reports whether the calling user is already authenticated against the third-party
+- [Get end-user authentication status for a tool server.](/api/client-api/tools/get-tool-server-auth-status.md): Returns display information and the calling user's current authentication status
+- [Get tool definitions from a tool server.](/api/client-api/tools/get-tool-server-tools.md): Returns the name, description and JSON input schema for the named tools on the
+- [List available tools](/api/client-api/tools/list-available-tools.md): Returns a filtered set of available tools based on optional tool name parameters. If no filters are provided, all available tools are returned.
+- [Tools API](/api/client-api/tools/overview.md): <ApiOverview
+- [Create verification](/api/client-api/verification/addverificationreminder.md): Creates a verification reminder for the document. Users can create verification reminders from different product surfaces.
+- [List verifications](/api/client-api/verification/listverifications.md): Returns the information to be rendered in verification dashboard. Includes information for each document owned by user regarding their verifications.
+- [Verification API](/api/client-api/verification/overview.md): <ApiOverview
+- [Update verification](/api/client-api/verification/verify.md): Verify documents to keep the knowledge up to date within customer corpus.
+
+### indexing-api
+
+Put and manage content in Glean with the Indexing API.
+
+- [Indexing API](/api/indexing-api.md): Put and manage content in Glean with the Indexing API.
+- [Add or update custom metadata](/api/indexing-api/add-or-update-custom-metadata.md): Associates custom metadata with a specific document. Custom metadata enables you to enrich documents with additional structured information that can be used for search, filtering, and faceting.
+- [Add or update datasource](/api/indexing-api/add-or-update-datasource.md): Add or update a custom datasource and its schema.
+- [Overview](/api/indexing-api/authentication-overview.md): <ApiOverview
+- [Beta: Get datasource status](/api/indexing-api/beta-get-datasource-status.md): Gather information about the datasource's overall status. Currently in beta, might undergo breaking changes without prior notice.
+- [Beta: Get document information](/api/indexing-api/beta-get-document-information.md): Gives various information that would help in debugging related to a particular document. Currently in beta, might undergo breaking changes without prior notice.
+- [Beta: Get document lifecycle events](/api/indexing-api/beta-get-document-lifecycle-events.md): Retrieves lifecycle events for a specific document including upload time, index times and deletions. Rate limited to 1 request per minute per datasource. Currently in beta, might undergo breaking changes without prior notice.
+- [Beta: Get information of a batch of documents](/api/indexing-api/beta-get-information-of-a-batch-of-documents.md): Gives various information that would help in debugging related to a batch of documents. Currently in beta, might undergo breaking changes without prior notice.
+- [Beta: Get user information](/api/indexing-api/beta-get-user-information.md): Gives various information that would help in debugging related to a particular user. Currently in beta, might undergo breaking changes without prior notice.
+- [Beta users](/api/indexing-api/beta-users.md): Allow the datasource be visible to the specified beta users. The default behaviour is datasource being visible to all users if it is enabled and not visible to any user if it is not enabled.
+- [Bulk index documents](/api/indexing-api/bulk-index-documents.md): Replaces the documents in a datasource using paginated batch API calls. Please refer to the [bulk indexing](https://developers.glean.com/indexing/documents/bulk-upload-model) documentation for an explanation of how to use bulk endpoints.
+- [Bulk index employees](/api/indexing-api/bulk-index-employees.md): Replaces all the currently indexed employees using paginated batch API calls. Please refer to the [bulk indexing](https://developers.glean.com/indexing/documents/bulk-upload-model) documentation for an explanation of how to use bulk endpoints.
+- [Bulk index external shortcuts](/api/indexing-api/bulk-index-external-shortcuts.md): Replaces all the currently indexed shortcuts using paginated batch API calls. Note that this endpoint is used for indexing shortcuts not hosted by Glean. If you want to upload shortcuts that would be hosted by Glean, please use the `/uploadshortcuts` endpoint. For information on what you can do with Golinks, which are Glean-hosted shortcuts, please refer to [this](https://docs.glean.com/user-guide/knowledge/go-links/how-go-links-work) page.
+- [Bulk index groups](/api/indexing-api/bulk-index-groups.md): Replaces the groups in a datasource using paginated batch API calls. Please refer to the [bulk indexing](https://developers.glean.com/indexing/documents/bulk-upload-model) documentation for an explanation of how to use bulk endpoints.
+- [Bulk index memberships for a group](/api/indexing-api/bulk-index-memberships-for-a-group.md): Replaces the memberships for a group in a datasource using paginated batch API calls. Please refer to the [bulk indexing](https://developers.glean.com/indexing/documents/bulk-upload-model) documentation for an explanation of how to use bulk endpoints.
+- [Bulk index teams](/api/indexing-api/bulk-index-teams.md): Replaces all the currently indexed teams using paginated batch API calls. Please refer to the [bulk indexing](https://developers.glean.com/indexing/documents/bulk-upload-model) documentation for an explanation of how to use bulk endpoints.
+- [Bulk index users](/api/indexing-api/bulk-index-users.md): Replaces the users in a datasource using paginated batch API calls. Please refer to the [bulk indexing](https://developers.glean.com/indexing/documents/bulk-upload-model) documentation for an explanation of how to use bulk endpoints.
+- [Check document access](/api/indexing-api/check-document-access.md): Check if a given user has access to access a document in a custom datasource
+- [Create or update metadata schema](/api/indexing-api/create-or-update-metadata-schema.md): Defines or updates the schema for a metadata group. Schemas should be defined before indexing metadata.
+- [Overview](/api/indexing-api/datasources-overview.md): <ApiOverview
+- [Delete document](/api/indexing-api/delete-document.md): Deletes the specified document from the index. Succeeds if document is not present.
+- [Delete employee](/api/indexing-api/delete-employee.md): Delete an employee. Silently succeeds if employee is not present.
+- [Delete group](/api/indexing-api/delete-group.md): Delete group from the datasource. Silently succeeds if group is not present.
+- [Delete membership](/api/indexing-api/delete-membership.md): Delete membership to a group in the specified datasource. Silently succeeds if membership is not present.
+- [Delete team](/api/indexing-api/delete-team.md): Delete a team based on provided id.
+- [Delete user](/api/indexing-api/delete-user.md): Delete the user from the datasource. Silently succeeds if user is not present.
+- [Overview](/api/indexing-api/documents-overview.md): <ApiOverview
+- [Get datasource config](/api/indexing-api/get-datasource-config.md): Fetches the datasource config for the specified custom datasource.
+- [Get document count](/api/indexing-api/get-document-count.md): Fetches document count for the specified custom datasource.
+- [Get document upload and indexing status](/api/indexing-api/get-document-upload-and-indexing-status.md): Intended for debugging/validation. Fetches the current upload and indexing status of documents.
+- [Get user count](/api/indexing-api/get-user-count.md): Fetches user count for the specified custom datasource.
+- [Index document](/api/indexing-api/index-document.md): Adds a document to the index or updates an existing document.
+- [Index documents](/api/indexing-api/index-documents.md): Adds or updates multiple documents in the index. Please refer to the [bulk indexing](https://developers.glean.com/indexing/documents/bulk-indexing/choosing-indexdocuments-vs-bulkindexdocuments) documentation for an explanation of when to use this endpoint.
+- [Index employee](/api/indexing-api/index-employee.md): Adds an employee or replaces the existing information about an employee.
+- [Index group](/api/indexing-api/index-group.md): Add or update a group in the datasource.
+- [Index membership](/api/indexing-api/index-membership.md): Add the memberships of a group in the datasource.
+- [Index team](/api/indexing-api/index-team.md): Adds a team or updates information about a team
+- [Index user](/api/indexing-api/index-user.md): Adds a datasource user or updates an existing user.
+- [Overview](/api/indexing-api/people-overview.md): <ApiOverview
+- [Overview](/api/indexing-api/permissions-overview.md): <ApiOverview
+- [Remove custom metadata](/api/indexing-api/remove-custom-metadata.md): Removes all custom metadata for the specified metadata group from a document.
+- [Remove metadata schema](/api/indexing-api/remove-metadata-schema.md): Deletes the schema definition for a metadata group. This does not delete existing metadata values on documents.
+- [Retrieve metadata schema](/api/indexing-api/retrieve-metadata-schema.md): Retrieves the current schema definition for a metadata group.
+- [Rotate token](/api/indexing-api/rotate-token.md): Rotates the secret value inside the Indexing API token and returns the new raw secret. All other properties of the token are unchanged. In order to rotate the secret value, include the token as the bearer token in the `/rotatetoken` request. Please refer to [Token rotation](https://developers.glean.com/indexing/authentication/token-rotation) documentation for more information.
+- [Schedules the processing of group memberships](/api/indexing-api/schedules-the-processing-of-group-memberships.md): Schedules the immediate processing of all group memberships uploaded through the indexing API. By default the uploaded group memberships will be processed asynchronously but this API can be used to schedule processing of all memberships on demand.
+- [Schedules the processing of uploaded documents](/api/indexing-api/schedules-the-processing-of-uploaded-documents.md): Schedules the immediate processing of documents uploaded through the indexing API. By default the uploaded documents will be processed asynchronously but this API can be used to schedule processing of all documents on demand.
+- [Schedules the processing of uploaded employees and teams](/api/indexing-api/schedules-the-processing-of-uploaded-employees-and-teams.md): Schedules the immediate processing of employees and teams uploaded through the indexing API. By default all uploaded people data will be processed asynchronously but this API can be used to schedule its processing on demand.
+- [Overview](/api/indexing-api/shortcuts-overview.md): <ApiOverview
+- [Submit datasource data](/api/indexing-api/submit-datasource-data.md): Validates and asynchronously processes a datasource-specific submission.
+- [Overview](/api/indexing-api/troubleshooting-overview.md): <ApiOverview
+- [Update document permissions](/api/indexing-api/update-document-permissions.md): Updates the permissions for a given document without modifying document content.
+- [Upload shortcuts](/api/indexing-api/upload-shortcuts.md): Creates glean shortcuts for uploaded shortcuts info. Glean would host the shortcuts, and they can be managed in the knowledge tab once uploaded.
+
+### platform-api
+
+Build modern Glean integrations with the Platform API.
+
+- [Platform API](/api/platform-api.md): Build modern Glean integrations with the Platform API.
+- [Agents API](/api/platform-api/agents-overview.md): <ApiOverview
+- [Platform API Authentication](/api/platform-api/authentication.md): Authenticate requests to the Glean Platform API.
+- [Platform Chat API](/api/platform-api/chat-overview.md): The Platform Chat API creates chat responses for applications that want to use Glean's knowledge and AI capabilities through the modern Platform API surface.
+- [Platform API Quickstart](/api/platform-api/getting-started.md): Start building a modern Glean integration with the Platform API.
+- [Create agent run](/api/platform-api/platform-agents-create-run.md): Execute an agent run. Set `stream` to true to receive server-sent events; otherwise the response contains the final agent messages.
+- [Get agent](/api/platform-api/platform-agents-get.md): Retrieve details for an agent available to the authenticated user.
+- [Get agent schemas](/api/platform-api/platform-agents-get-schemas.md): Retrieve an agent's input and output JSON schemas.
+- [Search agents](/api/platform-api/platform-agents-search.md): Search agents available to the authenticated user by agent name.
+- [Create a chat response](/api/platform-api/platform-chat-create.md): Run an assistant turn. Set `stream` to true to receive server-sent events; otherwise the response is a typed JSON response object.
+- [Search](/api/platform-api/platform-search.md): Search your organization's connected content and return ranked document results with cursor pagination. Use `GET /api/search/filters` to discover datasource identifiers and common filter fields. Built-in filter names are validated; other field names are accepted as custom filters and behavior depends on your Glean configuration and connected sources.
+- [List search filters](/api/platform-api/platform-search-filters.md): List datasources and common built-in filter fields visible to the authenticated user. This is a best-effort catalog, not an exhaustive list of every filter search accepts.
+- [Create skill](/api/platform-api/platform-skills-create.md): Create a skill from an uploaded SKILL.md, .zip, or .skill bundle. If the authenticated user already has a skill with the same name, the existing skill is superseded with a new version.
+- [Create skill version](/api/platform-api/platform-skills-create-version.md): Create a new immutable version for an existing caller-managed skill from an uploaded SKILL.md, .zip, or .skill bundle.
+- [Delete skill](/api/platform-api/platform-skills-delete.md): Delete a skill the authenticated caller is allowed to manage. This operation permanently removes all versions of the skill.
+- [Retrieve skill](/api/platform-api/platform-skills-get.md): Retrieve metadata for a skill available to the authenticated user.
+- [Download skill content](/api/platform-api/platform-skills-get-content.md): Download the latest installable bundle for a skill available to the authenticated user.
+- [Retrieve skill version](/api/platform-api/platform-skills-get-version.md): Retrieve metadata for a skill version available to the authenticated user.
+- [Download skill version content](/api/platform-api/platform-skills-get-version-content.md): Download the installable bundle for a skill version available to the authenticated user.
+- [Import skills from GitHub](/api/platform-api/platform-skills-import.md): Import one or more skills selected from a GitHub source preview. Each source URL is fetched and persisted as an independent skill with source provenance. This operation does not create a durable source resource. The import is atomic: if any source cannot be fetched, validated, or persisted, no skills are created.
+- [List skills](/api/platform-api/platform-skills-list.md): List skills available to the authenticated user.
+- [List skill versions](/api/platform-api/platform-skills-list-versions.md): List versions for a skill available to the authenticated user.
+- [Preview a GitHub skill source](/api/platform-api/platform-skills-preview-source.md): Inspect a GitHub URL without persisting a source or any discovered skills. Set stream to true to receive repository scan progress as server-sent events; otherwise the response contains the completed preview.
+- [Sync a GitHub-imported skill](/api/platform-api/platform-skills-sync.md): Refresh one GitHub-imported skill from its stored source URL. If the skill content has changed, this operation creates a new skill version. If the skill is no longer present upstream, the stored skill is left unchanged and must be deleted explicitly.
+- [Update skill](/api/platform-api/platform-skills-update.md): Update mutable metadata for a skill. V1 supports enabling or disabling a skill without changing its content.
+- [Validate skill bundle](/api/platform-api/platform-skills-validate.md): Validate a skill bundle without persisting it. Accepts a SKILL.md, .zip, or .skill upload and returns parsed metadata plus the normalized file layout.
+- [Search API](/api/platform-api/search-overview.md): <ApiOverview
+- [Skills API](/api/platform-api/skills-overview.md): The Platform Skills API lets applications discover, validate, import, synchronize, version, and manage skills that can be used with Glean.
+
+## api-info
+
+
+### client
+
+- [Datasource OAuth Redirects](/api-info/client/authentication/datasource-oauth.md): Control where users land after completing datasource OAuth authorization
+- [Glean-Issued Tokens for Client API](/api-info/client/authentication/glean-issued.md): Complete guide to creating and using Glean-issued tokens for Client API authentication
+- [OAuth Authentication for Client API](/api-info/client/authentication/oauth.md): Use OAuth access tokens with the Client API — from the Glean OAuth Authorization Server or your external identity provider
+- [Client API Authentication](/api-info/client/authentication/overview.md): Choose the right authentication method for your Client API integration
+- [Client API Usage Guide](/api-info/client/getting-started/basic-usage.md): Learn the core concepts and patterns for building applications with Glean's Client API. This guide focuses on understanding what you can build and how the API works, rather than language-specific implementation details.
+- [Choose a retrieval interface](/api-info/client/getting-started/choosing-a-retrieval-interface.md): Glean exposes enterprise knowledge through two main retrieval interfaces: REST APIs and the Glean MCP server. Choosing the right one depends on what you are building.
+- [Client API Quickstart](/api-info/client/getting-started/overview.md): Make your first permission-aware Client API request.
+
+### indexing
+
+- [Indexing API Authentication](/api-info/indexing/authentication/overview.md): Complete implementation guide for authenticating with Glean's Indexing API using Glean-issued tokens
+- [Token Rotation](/api-info/indexing/authentication/token-rotation.md): This guide covers token rotation for the indexing API. You'll learn how to exchange your rotatable access token for a new access token.
+- [Authentication](/api-info/indexing/custom-metadata/authentication.md): Custom Metadata requests require a Bearer token in the Authorization header. Tokens are scoped, so metadata-management permissions can be delegated independently of full indexing-token access.
+- [Custom Properties vs Custom Metadata](/api-info/indexing/custom-metadata/custom-properties-vs-custom-metadata.md): Glean offers two ways to attach structured metadata to documents for search, filtering, and faceting:
+- [Indexing Metadata](/api-info/indexing/custom-metadata/indexing-metadata.md): Once a schema is defined for a metadata group, you can attach metadata values to individual documents.
+- [Overview](/api-info/indexing/custom-metadata/overview.md): The Custom Metadata API attaches structured metadata to any document already indexed in Glean — regardless of which datasource it came from. Unlike Custom Properties, which are tied to a custom datasource and require re-uploading the entire document, Custom Metadata can be updated independently and applied to documents from any source (native connectors, custom datasources, etc.).
+- [Querying](/api-info/indexing/custom-metadata/querying.md): Once metadata is attached to documents, it becomes available for search and retrieval through the standard Client API.
+- [Schema Management](/api-info/indexing/custom-metadata/schema-management.md): A metadata group must have a schema defined before metadata can be attached to documents in that group. The schema declares which keys are allowed, what type each key is, and whether the value participates in full-text search.
+- [Category](/api-info/indexing/datasource/category.md): Choosing the appropriate type enables enhanced ranking. Please contact us if you
+- [Custom Properties](/api-info/indexing/datasource/custom-properties.md): In this document, we discuss how to define custom properties for a datasource and how to upload them with each document.
+- [Rendering Search Results](/api-info/indexing/datasource/rendering-search-results.md): The rendering behavior of the search results from a datasource are determined by 3 ways (in increasing order of preference):
+- [Test Datasource](/api-info/indexing/datasource/test-datasource.md): Before going live with a production datasource you might want to set up a test/staging datasource. You can use a test datasource to experiment with the indexing API, or to stage your changes. This test datasource lives in the production environment but doesn’t affect it. You can do this by ensuring that:
+- [Datasource Config](/api-info/indexing/debugging/datasource-config.md): Gather information about the datasource's config.
+- [Datasource Document](/api-info/indexing/debugging/datasource-document.md): Gives various information that would help in debugging issues related to a particular document. For example, it gives information about the document's upload and indexing status, the document's permissions, etc.
+- [Datasource Status](/api-info/indexing/debugging/datasource-status.md): Gather information about the datasource's overall status.
+- [Datasource User](/api-info/indexing/debugging/datasource-user.md): Gives various information that would help in debugging issues related to a particular user. For example, it gives information about the user's permissions, groups, memberships, etc.
+- [Document Access](/api-info/indexing/debugging/document-access.md): Check if a user has access to a document.
+- [Document Count](/api-info/indexing/debugging/document-count.md): Get the count of documents in a datasource.
+- [Activity](/api-info/indexing/documents/activity.md): We allow the option of allowing developers to push activity information for documents (VIEW, EDIT etc.) - that will be used for better ranking of documents for search.
+- [Bulk Indexing](/api-info/indexing/documents/bulk-indexing.md): Bulk index documents endpoint is used to index all the documents of a custom
+- [Bulk Upload Model](/api-info/indexing/documents/bulk-upload-model.md): The bulk upload endpoints delete all entries that are not a part of the most recent upload. For example, /bulkindexdocuments endpoint would delete all the documents that are not present in the most recent upload.
+- [Document Model](/api-info/indexing/documents/document-model.md): The following is the basic document model used for indexing a new document to Glean.
+- [Permissions](/api-info/indexing/documents/permissions.md): The content in Glean is highly customizable in terms of configuring visibility of documents, which can be noted while indexing documents using Indexing API endpoints. Glean may require some more information to manage users, groups and group memberships to enable the full power of customized permissions. This can be done using Permissions API endpoints.
+- [Supported MIME Types](/api-info/indexing/documents/supported-mimetypes.md): The Indexing API supports a variety of MIME types for various content fields in documents. This document provides a list of popular MIME types which are supported and guidelines on how to use them effectively.
+- [Index Documents](/api-info/indexing/getting-started/index-documents.md): This guide will help you quickly get familiar with the basics of using the Indexing API by configuring a datasource, indexing a document, and enabling the datasource to show up in search.
+- [Indexing API Quickstart](/api-info/indexing/getting-started/overview.md): Create a datasource and index your first document with the Indexing API.
+- [Setup Datasource](/api-info/indexing/getting-started/setup-datasource.md): To get started with the Indexing API, you first need to create a datasource that will store all the data you will be indexing. A datasource provides organizational structure and defines how your content appears in search results.
+
+## changelog
+
+Keep up with the latest changes and updates to Glean's developer platform
+
+- [Changelog](/changelog.md): Keep up with the latest changes and updates to Glean's developer platform
+
+## cookbook
+
+Recipes for building on Glean — every recipe includes the problem, architecture, prerequisites, runnable code, auth and permissions, and how to push it further.
+
+- [Recipes for building on Glean](/cookbook.md): Recipes for building on Glean — every recipe includes the problem, architecture, prerequisites, runnable code, auth and permissions, and how to push it further.
+
+### a2a-client
+
+Discover a published Glean agent's A2A card and run it from any A2A client — multi-turn, streamed, permission-aware.
+
+- [Call a Glean agent from an A2A client](/cookbook/a2a-client.md): Discover a published Glean agent's A2A card and run it from any A2A client — multi-turn, streamed, permission-aware.
+
+### build-engineering-portal
+
+The end-to-end showcase — index a developer catalog into Glean, then embed permission-aware search and chat back into the portal your team already uses.
+
+- [Build an engineering portal](/cookbook/build-engineering-portal.md): The end-to-end showcase — index a developer catalog into Glean, then embed permission-aware search and chat back into the portal your team already uses.
+
+### company-answers
+
+The hello-world of Glean apps: one page, one input, one permission-aware cited answer — built two ways, with the Web SDK and with the Chat API.
+
+- [Company Answers: a cited Q&A page on your own content](/cookbook/company-answers.md): The hello-world of Glean apps: one page, one input, one permission-aware cited answer — built two ways, with the Web SDK and with the Chat API.
+
+### connect-mcp-hosts
+
+Point Claude Code, Cursor, and Claude Desktop at your Glean MCP endpoint and run one enterprise task from each — same context, three surfaces.
+
+- [Connect Glean MCP to your AI tools](/cookbook/connect-mcp-hosts.md): Point Claude Code, Cursor, and Claude Desktop at your Glean MCP endpoint and run one enterprise task from each — same context, three surfaces.
+
+### customer-360
+
+One page per account — status, risks, and a drill-in chat — assembled from whatever your instance already knows about that customer. No CRM export, no separate index.
+
+- [Customer 360: an account page built from your own content](/cookbook/customer-360.md): One page per account — status, risks, and a drill-in chat — assembled from whatever your instance already knows about that customer. No CRM export, no separate index.
+
+### embed-search-chat
+
+Put permission-aware Glean search and chat directly inside an internal app with the Web SDK, so your team gets answers where they already work.
+
+- [Embed search & chat in an internal app](/cookbook/embed-search-chat.md): Put permission-aware Glean search and chat directly inside an internal app with the Web SDK, so your team gets answers where they already work.
+
+### multi-step-agent
+
+Build a Glean agent that plans, retrieves, and acts through a governed custom tool — with a safe fallback when the tool is denied.
+
+- [Multi-step agent with governed tools](/cookbook/multi-step-agent.md): Build a Glean agent that plans, retrieves, and acts through a governed custom tool — with a safe fallback when the tool is denied.
+
+### no-code-it-helpdesk-lovable
+
+Prompt Lovable into a private, single-user IT helpdesk prototype on the Glean Chat API — zero hand-written backend.
+
+- [IT helpdesk deflection page — no code, on Lovable](/cookbook/no-code-it-helpdesk-lovable.md): Prompt Lovable into a private, single-user IT helpdesk prototype on the Glean Chat API — zero hand-written backend.
+
+### no-code-pto-lookup-replit
+
+Prompt Replit Agent into a private, single-user HR lookup prototype on the Glean Chat API — zero hand-written backend.
+
+- [PTO & benefits lookup — no code, on Replit](/cookbook/no-code-pto-lookup-replit.md): Prompt Replit Agent into a private, single-user HR lookup prototype on the Glean Chat API — zero hand-written backend.
+
+### onboarding-hub
+
+A guided first-week hub for new hires: a checklist with progress, and every step able to answer itself from your own onboarding content.
+
+- [Onboarding Hub: a day-one checklist grounded in your own docs](/cookbook/onboarding-hub.md): A guided first-week hub for new hires: a checklist with progress, and every step able to answer itself from your own onboarding content.
+
+### oncall-copilot
+
+Triage an incident from your own runbooks and past incidents, propose one pre-registered action, and let a human approve it — where the gate refuses the wrong person, expiry escalates instead of auto-approving, and every attempt is audited.
+
+- [On-call Copilot](/cookbook/oncall-copilot.md): Triage an incident from your own runbooks and past incidents, propose one pre-registered action, and let a human approve it — where the gate refuses the wrong person, expiry escalates instead of auto-approving, and every attempt is audited.
+
+### permissions-aware-retrieval
+
+Use Glean's Platform API as the retrieval layer for your own LLM app — every result ACL-filtered for the caller before it ever reaches the model.
+
+- [Ground your own LLM app in Glean](/cookbook/permissions-aware-retrieval.md): Use Glean's Platform API as the retrieval layer for your own LLM app — every result ACL-filtered for the caller before it ever reaches the model.
+
+### rfp-responder
+
+Turn a customer questionnaire into grounded, cited draft answers — where every claim carries a source, unsupported rows route to a human, and nothing reaches the customer without approval.
+
+- [Answer an RFP or security questionnaire](/cookbook/rfp-responder.md): Turn a customer questionnaire into grounded, cited draft answers — where every claim carries a source, unsupported rows route to a human, and nothing reaches the customer without approval.
+
+## deprecations
+
+Track deprecated endpoints, fields, and parameters in Glean's APIs
+
+- [Deprecations](/deprecations.md): Track deprecated endpoints, fields, and parameters in Glean's APIs
+
+### overview
+
+How Glean evolves its REST API through additive changes and predictable deprecations
+
+- [API Evolution & Deprecations](/deprecations/overview.md): How Glean evolves its REST API through additive changes and predictable deprecations
+
+## docs-mcp
+
+Access Glean developer documentation directly from your AI coding assistant
+
+- [Docs MCP Server](/docs-mcp.md): Access Glean developer documentation directly from your AI coding assistant
+
+## errors
+
+Error reference for Glean Platform API ProblemDetail responses
+
+- [Platform API Errors](/errors.md): Error reference for Glean Platform API ProblemDetail responses
+
+### authentication-required
+
+authentication_required ProblemDetail reference for the Glean Platform API
+
+- [Authentication Required](/errors/authentication-required.md): authentication_required ProblemDetail reference for the Glean Platform API
+
+### conflict
+
+conflict ProblemDetail reference for the Glean Platform API
+
+- [Conflict](/errors/conflict.md): conflict ProblemDetail reference for the Glean Platform API
+
+### expired-cursor
+
+expired_cursor ProblemDetail reference for the Glean Platform API
+
+- [Expired Pagination Cursor](/errors/expired-cursor.md): expired_cursor ProblemDetail reference for the Glean Platform API
+
+### gone
+
+gone ProblemDetail reference for the Glean Platform API
+
+- [Gone](/errors/gone.md): gone ProblemDetail reference for the Glean Platform API
+
+### insufficient-permissions
+
+insufficient_permissions ProblemDetail reference for the Glean Platform API
+
+- [Insufficient Permissions](/errors/insufficient-permissions.md): insufficient_permissions ProblemDetail reference for the Glean Platform API
+
+### internal-error
+
+internal_error ProblemDetail reference for the Glean Platform API
+
+- [Internal Error](/errors/internal-error.md): internal_error ProblemDetail reference for the Glean Platform API
+
+### invalid-cursor
+
+invalid_cursor ProblemDetail reference for the Glean Platform API
+
+- [Invalid Pagination Cursor](/errors/invalid-cursor.md): invalid_cursor ProblemDetail reference for the Glean Platform API
+
+### invalid-datasource
+
+invalid_datasource ProblemDetail reference for the Glean Platform API
+
+- [Invalid Datasource](/errors/invalid-datasource.md): invalid_datasource ProblemDetail reference for the Glean Platform API
+
+### invalid-filter
+
+invalid_filter ProblemDetail reference for the Glean Platform API
+
+- [Invalid Filter](/errors/invalid-filter.md): invalid_filter ProblemDetail reference for the Glean Platform API
+
+### invalid-parameter
+
+invalid_parameter ProblemDetail reference for the Glean Platform API
+
+- [Invalid Parameter](/errors/invalid-parameter.md): invalid_parameter ProblemDetail reference for the Glean Platform API
+
+### invalid-request
+
+invalid_request ProblemDetail reference for the Glean Platform API
+
+- [Invalid Request](/errors/invalid-request.md): invalid_request ProblemDetail reference for the Glean Platform API
+
+### method-not-allowed
+
+method_not_allowed ProblemDetail reference for the Glean Platform API
+
+- [Method Not Allowed](/errors/method-not-allowed.md): method_not_allowed ProblemDetail reference for the Glean Platform API
+
+### missing-required-field
+
+missing_required_field ProblemDetail reference for the Glean Platform API
+
+- [Missing Required Field](/errors/missing-required-field.md): missing_required_field ProblemDetail reference for the Glean Platform API
+
+### rate-limit-exceeded
+
+rate_limit_exceeded ProblemDetail reference for the Glean Platform API
+
+- [Rate Limit Exceeded](/errors/rate-limit-exceeded.md): rate_limit_exceeded ProblemDetail reference for the Glean Platform API
+
+### request-timeout
+
+request_timeout ProblemDetail reference for the Glean Platform API
+
+- [Request Timeout](/errors/request-timeout.md): request_timeout ProblemDetail reference for the Glean Platform API
+
+### request-too-large
+
+request_too_large ProblemDetail reference for the Glean Platform API
+
+- [Request Too Large](/errors/request-too-large.md): request_too_large ProblemDetail reference for the Glean Platform API
+
+### resource-not-found
+
+resource_not_found ProblemDetail reference for the Glean Platform API
+
+- [Resource Not Found](/errors/resource-not-found.md): resource_not_found ProblemDetail reference for the Glean Platform API
+
+### service-unavailable
+
+service_unavailable ProblemDetail reference for the Glean Platform API
+
+- [Service Unavailable](/errors/service-unavailable.md): service_unavailable ProblemDetail reference for the Glean Platform API
+
+### spend-limit-exceeded
+
+spend_limit_exceeded ProblemDetail reference for the Glean Platform API
+
+- [Spend Limit Exceeded](/errors/spend-limit-exceeded.md): spend_limit_exceeded ProblemDetail reference for the Glean Platform API
+
+### token-expired
+
+token_expired ProblemDetail reference for the Glean Platform API
+
+- [Token Expired](/errors/token-expired.md): token_expired ProblemDetail reference for the Glean Platform API
+
+### token-limit-exceeded
+
+token_limit_exceeded ProblemDetail reference for the Glean Platform API
+
+- [Token Limit Exceeded](/errors/token-limit-exceeded.md): token_limit_exceeded ProblemDetail reference for the Glean Platform API
+
+### tools-unauthorized
+
+tools_unauthorized ProblemDetail reference for the Glean Platform API
+
+- [Tools Unauthorized](/errors/tools-unauthorized.md): tools_unauthorized ProblemDetail reference for the Glean Platform API
+
+### unprocessable-query
+
+unprocessable_query ProblemDetail reference for the Glean Platform API
+
+- [Unprocessable Query](/errors/unprocessable-query.md): unprocessable_query ProblemDetail reference for the Glean Platform API
+
+## experimental
+
+
+### overview
+
+How Glean ships experimental REST API features and how to opt in to preview them
+
+- [Experimental APIs](/experimental/overview.md): How Glean ships experimental REST API features and how to opt in to preview them
+
+## get-started
+
+
+### authentication
+
+Authentication methods and concepts for Glean APIs - Platform, Client, and Indexing
+
+- [Authentication Overview](/get-started/authentication.md): Authentication methods and concepts for Glean APIs - Platform, Client, and Indexing
+
+### key-terms
+
+As you read our documentation, you may encounter terminology that is specific to Glean or has a particular meaning within the platform. Below are key definitions.
+
+- [Key Terms](/get-started/key-terms.md): As you read our documentation, you may encounter terminology that is specific to Glean or has a particular meaning within the platform. Below are key definitions.
+
+### rate-limits
+
+To ensure performance and stability, Glean enforces rate limits at the deployment, user, and endpoint levels.
+
+- [Rate Limits and Retries](/get-started/rate-limits.md): To ensure performance and stability, Glean enforces rate limits at the deployment, user, and endpoint levels.
+
+## guides
+
+
+### agents
+
+- [Direct API Integration](/guides/agents/direct-api.md): Build custom agents using Glean's REST APIs with our official client libraries
+- [Glean LangChain Integration](/guides/agents/langchain.md): Build AI agents using LangChain framework with Glean's search and chat capabilities
+- [Build an Agentic AI With NVIDIA NIM and Glean](/guides/agents/nvidia-example.md): Complete example of building an agent using NVIDIA NIM and Glean for enterprise knowledge access
+- [Building Agents with Glean](/guides/agents/overview.md): Complete guide to building AI agents using Glean's ecosystem of tools and libraries
+- [Glean Agent Specification](/guides/agents/specification.md): A human-readable file system format for defining Glean agents.
+- [Glean Agent Toolkit](/guides/agents/toolkit.md): Pre-built Glean tools that work across multiple agent frameworks
+
+### chat
+
+- [Simple Chatbot Example](/guides/chat/chatbot-example.md): Build a basic chatbot using Glean's Chat API
+- [Deep Linked Citations](/guides/chat/deep-linked-citations.md): Upgrade your custom chat frontend to display rich citation previews with highlighted snippets from source documents
+- [Building Chat Applications](/guides/chat/overview.md): Create conversational AI applications using Glean's Chat API and client libraries
+
+### mcp
+
+Connect Glean to AI models with MCP
+
+- [Model Context Protocol (MCP) Remote Server](/guides/mcp.md): Connect Glean to AI models with MCP
+- [Glean Plugin for Claude Code](/guides/mcp/claude-code.md): Install the official Glean plugin for Claude Code — enterprise knowledge as native skills in your terminal.
+- [Glean Plugin for Codex](/guides/mcp/codex.md): Install the official Glean plugin for Codex — enterprise knowledge, search, people, and code in your terminal.
+- [Glean Plugin for Cursor](/guides/mcp/cursor.md): Install the official Glean plugin for Cursor — enterprise search and knowledge directly in your editor.
+- [Model Context Protocol (MCP) Remote Server](/guides/mcp/RemoteMCPContent.md): Connect your AI tools to Glean's enterprise knowledge base with zero setup required. The Remote MCP Server is built directly into Glean's platform, providing instant access to your organization's data through any MCP-compatible host application.
+- [Supported MCP Hosts](/guides/mcp/supported-hosts.md): Every MCP host application that can connect to Glean, filterable by type and installability.
+
+### search
+
+- [Datasource Filters](/guides/search/datasource-filters.md): Apart from the general filters we’ve discussed, some filters are specific to one datasource- for example, Confluence has the author facet, and Slack has the channel facet. There are also custom facets that are defined for custom datasources pushed via api.
+- [Faceted Filtering](/guides/search/faceted-filters.md): We provide the functionality of filtering the list of possible facets of a particular type (obtained in the facetResults above) using a prefix. If you want to filter the buckets of a particular sourceName in the facetResults using a specific prefix, you can set the facetBucketFilter object. It has the following two fields:
+- [Filtering Results](/guides/search/filtering-results.md): Filters are a powerful tool to narrow down your search results. We support filters that are generalized to every document, as well as filters that are specific to different datasources.
+- [Returning LLM Content Over Snippets](/guides/search/llm-content.md): Learn how to request LLM content over snippets using the search API.
+- [Search Integration](/guides/search/overview.md): Learn how to integrate Glean's powerful search capabilities into your applications
+
+### tools
+
+- [Authentication](/guides/tools/authentication.md): Configure and implement authentication for Glean Tools to ensure secure integrations
+- [Creating Tools](/guides/tools/create-tools.md): Learn how to create, configure and deploy Tools in Glean to enable automated workflows and integrations
+- [Google Calendar Events Retrieval Tool](/guides/tools/examples/google-calendar-events.md): Create a retrieval tool that enables Glean Assistant to fetch and display Google Calendar events
+- [Google Docs Update Tool](/guides/tools/examples/google-docs-update.md): Learn how to create an execution tool that allows Glean Assistant to update Google Documents programmatically
+- [Jira Issue Creation](/guides/tools/examples/jira-issue-creation.md): Implement an execution tool that enables Glean Assistant to create Jira issues programmatically with proper user attribution
+- [Jira Issue Creation Using Redirect Tool](/guides/tools/examples/jira-issue-creation-redirect.md): Implement a redirect tool that enables Glean Assistant to create Jira issues through the native Jira interface
+- [Zendesk Ticket Redirection Tool](/guides/tools/examples/zendesk-ticket-redirection.md): Implement a redirect tool that enables Glean Assistant to create Zendesk tickets through the native Zendesk interface
+- [Tools FAQ](/guides/tools/faq.md): Frequently asked questions about implementing and using Tools on Glean's platform
+- [Tools Overview](/guides/tools/overview.md): Learn how tools can automate tasks and enhance Glean Chat functionality
+
+## libraries
+
+
+### api-clients
+
+Official API clients for integrating Glean's search and AI capabilities into your applications
+
+- [API Clients](/libraries/api-clients.md): Official API clients for integrating Glean's search and AI capabilities into your applications
+- [Go API Client](/libraries/api-clients/go.md): Complete guide to using Glean's Go API client for backend services
+- [Java API Client](/libraries/api-clients/java.md): Complete guide to using Glean's Java API client for enterprise applications
+- [Python API Client](/libraries/api-clients/python.md): Complete guide to using Glean's Python API client for building search and chat applications
+- [TypeScript API Client](/libraries/api-clients/typescript.md): Complete guide to using Glean's TypeScript/JavaScript API client
+
+### indexing-sdk
+
+Build custom Glean connectors in Python - fetch from any source, transform to Glean documents, and index with permissions
+
+- [Indexing SDK](/libraries/indexing-sdk.md): Build custom Glean connectors in Python - fetch from any source, transform to Glean documents, and index with permissions
+- [CLI](/libraries/indexing-sdk/cli.md): glean-idx, the single command line interface for building and operating Glean connectors
+- [Architecture](/libraries/indexing-sdk/concepts/architecture.md): How the Glean Indexing SDK moves data from your source into the Glean index
+- [Connector types](/libraries/indexing-sdk/concepts/connector-types.md): Choose the right Glean Indexing SDK base class for your data volume and source API
+- [Indexing modes](/libraries/indexing-sdk/concepts/indexing-modes.md): Full versus incremental crawls, stale document deletion, and checkpointing in the Glean Indexing SDK
+- [Deployment overview](/libraries/indexing-sdk/deployment/overview.md): Generate Docker and Terraform for a Glean connector with glean-idx deploy
+- [Observability](/libraries/indexing-sdk/observability.md): Structured logging, metrics, and cloud provider plugins for Glean connectors
+- [Permissions](/libraries/indexing-sdk/permissions.md): Index documents with real ACLs and push the identities that make them evaluate
+- [Data clients](/libraries/indexing-sdk/pull/data-clients.md): BasePullHttpStreamingDataClient - paginated HTTP data clients with no boilerplate
+- [HTTP client](/libraries/indexing-sdk/pull/http-client.md): PullHttpClient - retries, backoff, redaction, and bounded fetches against your source API
+- [Pagination](/libraries/indexing-sdk/pull/pagination.md): Link header, offset, and cursor pagination in the Glean Indexing SDK pull recipes
+- [Rate limiting](/libraries/indexing-sdk/pull/rate-limiting.md): Token bucket rate limiting for source APIs in the Glean Indexing SDK
+- [Batching and throughput](/libraries/indexing-sdk/push/batching.md): Tuning batch size, byte limits, timeouts, and upload concurrency in the Glean Indexing SDK
+- [Error handling](/libraries/indexing-sdk/push/error-handling.md): The Glean Indexing SDK exception hierarchy and how to handle connector failures
+- [PushUploader](/libraries/indexing-sdk/push/uploader.md): The Glean-facing upload layer - documents, identities, and employees
+- [Quickstart](/libraries/indexing-sdk/quickstart.md): Install the Glean Indexing SDK and index your first document
+- [Status and debugging](/libraries/indexing-sdk/status-and-debugging.md): Answer "why isn't my document in Glean search?" with glean-idx and StatusClient
+- [End-to-end testing](/libraries/indexing-sdk/testing/end-to-end.md): Phase 3 - run a connector against a real source and a real Glean instance
+- [Integration testing](/libraries/indexing-sdk/testing/integration.md): Phase 2 - run against the real source API with record and replay, and a mocked Glean client
+- [Testing overview](/libraries/indexing-sdk/testing/overview.md): The three-phase testing model for Glean Indexing SDK connectors
+- [Unit testing](/libraries/indexing-sdk/testing/unit.md): Phase 1 - test connectors with a fully mocked Glean client and no network access
+
+### web-sdk
+
+- [Third-Party Cookie Management](/libraries/web-sdk/3rd-party-cookies.md): Understanding browser third-party cookie policies and their impact on Glean functionality
+- [SSO Authentication](/libraries/web-sdk/authentication/default-sso.md): Default authentication method using your organization's SSO login flow
+- [Web SDK Authentication](/libraries/web-sdk/authentication/overview.md): Choose the right authentication method for embedding Glean in your application
+- [Server-to-Server Authentication](/libraries/web-sdk/authentication/server-to-server.md): Bypass user authentication with token-based authentication
+- [Search Box + Results](/libraries/web-sdk/components/autocomplete.md): Build a custom search page by combining Glean's search box and search results components
+- [Glean Chat](/libraries/web-sdk/components/chat.md): Implement AI-powered chat functionality that leverages your company's content and user relationships
+- [Modal Search](/libraries/web-sdk/components/modal-search.md): Add a powerful search modal dialog to your application with minimal code integration
+- [Recommendations](/libraries/web-sdk/components/recommendations.md): Display contextual recommendations and search functionality based on the current page content
+- [Glean Settings](/libraries/web-sdk/components/settings.md): Integrate Glean settings into an internal application
+- [Sidebar Search](/libraries/web-sdk/components/sidebar.md): Integrate contextual search, chat, and recommendations in a convenient sidebar interface
+- [Brightspot](/libraries/web-sdk/guides/brightspot.md): Guide for implementing Glean's modal search functionality within Brightspot sites
+- [LumApps](/libraries/web-sdk/guides/lumapps.md): Instructions for replacing LumApps' native search functionality with Glean's modal search interface
+- [React](/libraries/web-sdk/guides/react.md): Integrate Glean Search into your React application
+- [Embedding Glean Search & Chat into SharePoint Sites](/libraries/web-sdk/guides/sharepoint.md): Guide for embedding Glean Search or Chat into SharePoint sites using SharePoint Framework (SPFx)
+- [Zendesk](/libraries/web-sdk/guides/zendesk.md): Step-by-step guide for integrating Glean search functionality into Zendesk Guide using the Copenhagen template
+- [Web SDK](/libraries/web-sdk/overview.md): Embed permission-aware Glean search, AI chat, and contextual recommendations into any internal surface with the Glean Web SDK
+- [Web SDK Reference](/libraries/web-sdk/reference.md): Interfaces
+- [AuthTokenDetails](/libraries/web-sdk/reference/interfaces/AuthTokenDetails.md): Export
+- [BoxCustomizations](/libraries/web-sdk/reference/interfaces/BoxCustomizations.md): Style and other options which can be customized on the embedded search widget box.
+- [ChatCustomizations](/libraries/web-sdk/reference/interfaces/ChatCustomizations.md): Properties
+- [ChatHandle](/libraries/web-sdk/reference/interfaces/ChatHandle.md): Properties
+- [ChatOptions](/libraries/web-sdk/reference/interfaces/ChatOptions.md): Extends
+- [FilterConfig](/libraries/web-sdk/reference/interfaces/FilterConfig.md): Properties
+- [GleanWebSDK](/libraries/web-sdk/reference/interfaces/GleanWebSDK.md): Entry point for all Glean embedded widgets.
+- [Abstract Interface: GuestAuthProvider](/libraries/web-sdk/reference/interfaces/GuestAuthProvider.md): Creates and manages auth tokens for guest users.
+- [GuestAuthProviderOptions](/libraries/web-sdk/reference/interfaces/GuestAuthProviderOptions.md): Properties
+- [ModalSearchOptions](/libraries/web-sdk/reference/interfaces/ModalSearchOptions.md): Extends
+- [Options](/libraries/web-sdk/reference/interfaces/Options.md): Extended by
+- [RecommendationsBoxCustomizations](/libraries/web-sdk/reference/interfaces/RecommendationsBoxCustomizations.md): Properties
+- [RecommendationsOptions](/libraries/web-sdk/reference/interfaces/RecommendationsOptions.md): Extends
+- [RecommendationsResultsOptions](/libraries/web-sdk/reference/interfaces/RecommendationsResultsOptions.md): Extends
+- [RecommendationsSearchOptions](/libraries/web-sdk/reference/interfaces/RecommendationsSearchOptions.md): Extends
+- [SearchBoxCustomizations](/libraries/web-sdk/reference/interfaces/SearchBoxCustomizations.md): Style and other options which can be customized on the embedded search widget box.
+- [SearchBoxOptions](/libraries/web-sdk/reference/interfaces/SearchBoxOptions.md): Extends
+- [SearchOptions](/libraries/web-sdk/reference/interfaces/SearchOptions.md): Extends
+- [SettingsOptions](/libraries/web-sdk/reference/interfaces/SettingsOptions.md): Extends
+- [TabbedSearchOptions](/libraries/web-sdk/reference/interfaces/TabbedSearchOptions.md): Extends
+- [Theme](/libraries/web-sdk/reference/interfaces/Theme.md): Properties
+- [WidgetHandle](/libraries/web-sdk/reference/interfaces/WidgetHandle.md): Properties
+- [ThemeVariant](/libraries/web-sdk/reference/type-aliases/ThemeVariant.md)
+- [WebSdkChatEvent](/libraries/web-sdk/reference/type-aliases/WebSdkChatEvent.md): Chat events that can be emitted by the chat component
+- [attach](/libraries/web-sdk/reference/variables/attach.md)
+- [createGuestAuthProvider](/libraries/web-sdk/reference/variables/createGuestAuthProvider.md)
+- [default](/libraries/web-sdk/reference/variables/default.md)
+- [getChatOptionsFromUrl](/libraries/web-sdk/reference/variables/getChatOptionsFromUrl.md)
+- [openSidebar](/libraries/web-sdk/reference/variables/openSidebar.md)
+- [renderChat](/libraries/web-sdk/reference/variables/renderChat.md)
+- [renderRecommendations](/libraries/web-sdk/reference/variables/renderRecommendations.md)
+- [renderSearchBox](/libraries/web-sdk/reference/variables/renderSearchBox.md)
+- [renderSearchResults](/libraries/web-sdk/reference/variables/renderSearchResults.md)
+- [version](/libraries/web-sdk/reference/variables/version.md)

@@ -1,0 +1,57 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Glean Client REST activity documents API",
+    "version": "0.9.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "documents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve document metadata by id or URL",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/getdocuments"
+          },
+          "docs": "Retrieve document metadata by id or URL"
+        },
+        {
+          "info": {
+            "name": "Retrieve documents matching facets",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/getdocumentsbyfacets"
+          },
+          "docs": "Retrieve documents matching facets"
+        },
+        {
+          "info": {
+            "name": "Get effective permissions for a document",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/getdocpermissions"
+          },
+          "docs": "Get effective permissions for a document"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

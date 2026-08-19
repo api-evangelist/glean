@@ -1,0 +1,46 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Glean Client REST activity API",
+    "version": "0.9.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "activity",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Submit activity signals (views, clicks, edits)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/activity"
+          },
+          "docs": "Submit activity signals (views, clicks, edits)"
+        },
+        {
+          "info": {
+            "name": "Submit user feedback",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/feedback"
+          },
+          "docs": "Submit user feedback"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

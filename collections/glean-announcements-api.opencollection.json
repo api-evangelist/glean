@@ -1,0 +1,57 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Glean Client REST activity announcements API",
+    "version": "0.9.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "announcements",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create an announcement",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/createannouncement"
+          },
+          "docs": "Create an announcement"
+        },
+        {
+          "info": {
+            "name": "Update an announcement",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/updateannouncement"
+          },
+          "docs": "Update an announcement"
+        },
+        {
+          "info": {
+            "name": "Delete an announcement",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/deleteannouncement"
+          },
+          "docs": "Delete an announcement"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

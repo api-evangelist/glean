@@ -1,0 +1,57 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Glean Client REST activity verification API",
+    "version": "0.9.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "verification",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Record a verification on a document",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/verify"
+          },
+          "docs": "Record a verification on a document"
+        },
+        {
+          "info": {
+            "name": "List verifications",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/listverifications"
+          },
+          "docs": "List verifications"
+        },
+        {
+          "info": {
+            "name": "Add a verification reminder",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/addverificationreminder"
+          },
+          "docs": "Add a verification reminder"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

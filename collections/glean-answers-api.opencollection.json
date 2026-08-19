@@ -1,0 +1,79 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Glean Client REST activity answers API",
+    "version": "0.9.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "answers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a curated answer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/createanswer"
+          },
+          "docs": "Create a curated answer"
+        },
+        {
+          "info": {
+            "name": "Edit a curated answer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/editanswer"
+          },
+          "docs": "Edit a curated answer"
+        },
+        {
+          "info": {
+            "name": "Delete a curated answer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/deleteanswer"
+          },
+          "docs": "Delete a curated answer"
+        },
+        {
+          "info": {
+            "name": "Get a curated answer by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/getanswer"
+          },
+          "docs": "Get a curated answer by id"
+        },
+        {
+          "info": {
+            "name": "List curated answers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/listanswers"
+          },
+          "docs": "List curated answers"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

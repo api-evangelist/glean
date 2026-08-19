@@ -1,0 +1,79 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Glean Client REST activity pins API",
+    "version": "0.9.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "pins",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Pin a document",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/pin"
+          },
+          "docs": "Pin a document"
+        },
+        {
+          "info": {
+            "name": "Unpin a document",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/unpin"
+          },
+          "docs": "Unpin a document"
+        },
+        {
+          "info": {
+            "name": "Get a pin",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/getpin"
+          },
+          "docs": "Get a pin"
+        },
+        {
+          "info": {
+            "name": "Edit a pin",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/editpin"
+          },
+          "docs": "Edit a pin"
+        },
+        {
+          "info": {
+            "name": "List pins",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/listpins"
+          },
+          "docs": "List pins"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

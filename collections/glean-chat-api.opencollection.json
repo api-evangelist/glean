@@ -1,0 +1,112 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Glean Client REST activity chat API",
+    "version": "0.9.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "chat",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Send a chat message to the Glean assistant",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/chat"
+          },
+          "docs": "Send a chat message to the Glean assistant"
+        },
+        {
+          "info": {
+            "name": "Get a chat session by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/getchat"
+          },
+          "docs": "Get a chat session by id"
+        },
+        {
+          "info": {
+            "name": "List the user's chat sessions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/listchats"
+          },
+          "docs": "List the user's chat sessions"
+        },
+        {
+          "info": {
+            "name": "Delete one or more chat sessions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/deletechats"
+          },
+          "docs": "Delete one or more chat sessions"
+        },
+        {
+          "info": {
+            "name": "Delete all chat sessions for the user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/deleteallchats"
+          },
+          "docs": "Delete all chat sessions for the user"
+        },
+        {
+          "info": {
+            "name": "Upload files for use in chat context",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/uploadchatfiles"
+          },
+          "docs": "Upload files for use in chat context"
+        },
+        {
+          "info": {
+            "name": "List uploaded chat files",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/getchatfiles"
+          },
+          "docs": "List uploaded chat files"
+        },
+        {
+          "info": {
+            "name": "Delete uploaded chat files",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/deletechatfiles"
+          },
+          "docs": "Delete uploaded chat files"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

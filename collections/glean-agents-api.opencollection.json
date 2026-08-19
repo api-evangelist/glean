@@ -1,0 +1,93 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Glean Client REST activity agents API",
+    "version": "0.9.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "agents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get an agent definition",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/agents/:agent_id",
+            "params": [
+              {
+                "name": "agent_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get an agent definition"
+        },
+        {
+          "info": {
+            "name": "Get input/output schemas for an agent",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/agents/:agent_id/schemas",
+            "params": [
+              {
+                "name": "agent_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get input/output schemas for an agent"
+        },
+        {
+          "info": {
+            "name": "Search for agents",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/agents/search"
+          },
+          "docs": "Search for agents"
+        },
+        {
+          "info": {
+            "name": "Invoke an agent and wait for the final response",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/agents/runs/wait"
+          },
+          "docs": "Invoke an agent and wait for the final response"
+        },
+        {
+          "info": {
+            "name": "Invoke an agent and stream intermediate steps",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/agents/runs/stream"
+          },
+          "docs": "Invoke an agent and stream intermediate steps"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,112 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Glean Client REST activity collections API",
+    "version": "0.9.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "collections",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/createcollection"
+          },
+          "docs": "Create a collection"
+        },
+        {
+          "info": {
+            "name": "Edit a collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/editcollection"
+          },
+          "docs": "Edit a collection"
+        },
+        {
+          "info": {
+            "name": "Delete a collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/deletecollection"
+          },
+          "docs": "Delete a collection"
+        },
+        {
+          "info": {
+            "name": "Get a collection by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/getcollection"
+          },
+          "docs": "Get a collection by id"
+        },
+        {
+          "info": {
+            "name": "List collections visible to the user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/listcollections"
+          },
+          "docs": "List collections visible to the user"
+        },
+        {
+          "info": {
+            "name": "Add items to a collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/addcollectionitems"
+          },
+          "docs": "Add items to a collection"
+        },
+        {
+          "info": {
+            "name": "Edit a collection item",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/editcollectionitem"
+          },
+          "docs": "Edit a collection item"
+        },
+        {
+          "info": {
+            "name": "Remove an item from a collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/deletecollectionitem"
+          },
+          "docs": "Remove an item from a collection"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,79 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Glean Client REST activity shortcuts API",
+    "version": "0.9.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "shortcuts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a shortcut (go link)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/createshortcut"
+          },
+          "docs": "Create a shortcut (go link)"
+        },
+        {
+          "info": {
+            "name": "Update a shortcut",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/updateshortcut"
+          },
+          "docs": "Update a shortcut"
+        },
+        {
+          "info": {
+            "name": "Delete a shortcut",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/deleteshortcut"
+          },
+          "docs": "Delete a shortcut"
+        },
+        {
+          "info": {
+            "name": "Get a shortcut by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/getshortcut"
+          },
+          "docs": "Get a shortcut by id"
+        },
+        {
+          "info": {
+            "name": "List shortcuts",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/listshortcuts"
+          },
+          "docs": "List shortcuts"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

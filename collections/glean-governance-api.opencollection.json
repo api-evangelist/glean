@@ -1,0 +1,64 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Glean Client REST activity governance API",
+    "version": "0.9.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "governance",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a data governance policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/governance/data/policies"
+          },
+          "docs": "Create a data governance policy"
+        },
+        {
+          "info": {
+            "name": "Get a governance policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/governance/data/policies/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a governance policy"
+        },
+        {
+          "info": {
+            "name": "Create a governance report",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/governance/data/reports"
+          },
+          "docs": "Create a governance report"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

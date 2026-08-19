@@ -1,0 +1,53 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Glean Client REST activity people API",
+    "version": "0.9.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "people",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Look up people in the knowledge graph",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/people"
+          },
+          "docs": "Look up people in the knowledge graph"
+        },
+        {
+          "info": {
+            "name": "Get a person's profile photo",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/people/:person_id/photo",
+            "params": [
+              {
+                "name": "person_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a person's profile photo"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,83 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Glean Client REST activity search API",
+    "version": "0.9.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "search",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Run a unified, permission-aware search across connected sources",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/search",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Run a unified, permission-aware search across connected sources"
+        },
+        {
+          "info": {
+            "name": "Search across all content (admin scope, bypasses user ACLs)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/adminsearch"
+          },
+          "docs": "Search across all content (admin scope, bypasses user ACLs)"
+        },
+        {
+          "info": {
+            "name": "Get query autocompletion suggestions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/autocomplete"
+          },
+          "docs": "Get query autocompletion suggestions"
+        },
+        {
+          "info": {
+            "name": "Get personalized content recommendations for the user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/recommendations"
+          },
+          "docs": "Get personalized content recommendations for the user"
+        },
+        {
+          "info": {
+            "name": "Get the user's personalized activity feed",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}-be.glean.com/rest/api/v1/feed"
+          },
+          "docs": "Get the user's personalized activity feed"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
