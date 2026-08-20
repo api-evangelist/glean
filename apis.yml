@@ -26,6 +26,19 @@ type: Index
 access: 3rd-Party
 tags:
 - Agents
+- Artificial Intelligence
+- Answers
+- Chat
+- Connectors
+- Enterprise Search
+- Generative AI
+- Indexing
+- Knowledge
+- RAG
+- Search
+- Work Assistant
+tags_raw:
+- Agents
 - AI
 - Answers
 - Chat
@@ -72,6 +85,10 @@ apis:
   humanURL: https://developers.glean.com/api-reference/client-api/agents
   baseURL: https://{instance}-be.glean.com/rest/api/v1
   tags:
+  - Agents
+  - Artificial Intelligence
+  - Workflows
+  tags_raw:
   - Agents
   - AI
   - Workflows
@@ -124,6 +141,8 @@ apis:
   humanURL: https://developers.glean.com/api-info/client/getting-started
   baseURL: https://{instance}-be.glean.com/rest/api/v1
   tags:
+  - Activity
+  tags_raw:
   - activity
   properties:
   - type: OpenAPI
@@ -138,6 +157,8 @@ apis:
   humanURL: https://developers.glean.com/api-info/client/getting-started
   baseURL: https://{instance}-be.glean.com/rest/api/v1
   tags:
+  - Agents
+  tags_raw:
   - agents
   properties:
   - type: OpenAPI
@@ -152,6 +173,8 @@ apis:
   humanURL: https://developers.glean.com/api-info/client/getting-started
   baseURL: https://{instance}-be.glean.com/rest/api/v1
   tags:
+  - Announcements
+  tags_raw:
   - announcements
   properties:
   - type: OpenAPI
@@ -166,6 +189,8 @@ apis:
   humanURL: https://developers.glean.com/api-info/client/getting-started
   baseURL: https://{instance}-be.glean.com/rest/api/v1
   tags:
+  - Answers
+  tags_raw:
   - answers
   properties:
   - type: OpenAPI
@@ -180,6 +205,8 @@ apis:
   humanURL: https://developers.glean.com/api-info/client/getting-started
   baseURL: https://{instance}-be.glean.com/rest/api/v1
   tags:
+  - Chat
+  tags_raw:
   - chat
   properties:
   - type: OpenAPI
@@ -194,6 +221,8 @@ apis:
   humanURL: https://developers.glean.com/api-info/client/getting-started
   baseURL: https://{instance}-be.glean.com/rest/api/v1
   tags:
+  - Collection
+  tags_raw:
   - collections
   properties:
   - type: OpenAPI
@@ -208,6 +237,8 @@ apis:
   humanURL: https://developers.glean.com/api-info/client/getting-started
   baseURL: https://{instance}-be.glean.com/rest/api/v1
   tags:
+  - Documents
+  tags_raw:
   - documents
   properties:
   - type: OpenAPI
@@ -222,6 +253,8 @@ apis:
   humanURL: https://developers.glean.com/api-info/client/getting-started
   baseURL: https://{instance}-be.glean.com/rest/api/v1
   tags:
+  - Governance
+  tags_raw:
   - governance
   properties:
   - type: OpenAPI
@@ -236,6 +269,8 @@ apis:
   humanURL: https://developers.glean.com/api-info/client/getting-started
   baseURL: https://{instance}-be.glean.com/rest/api/v1
   tags:
+  - Insights
+  tags_raw:
   - insights
   properties:
   - type: OpenAPI
@@ -250,6 +285,8 @@ apis:
   humanURL: https://developers.glean.com/api-info/client/getting-started
   baseURL: https://{instance}-be.glean.com/rest/api/v1
   tags:
+  - People
+  tags_raw:
   - people
   properties:
   - type: OpenAPI
@@ -264,6 +301,8 @@ apis:
   humanURL: https://developers.glean.com/api-info/client/getting-started
   baseURL: https://{instance}-be.glean.com/rest/api/v1
   tags:
+  - Pins
+  tags_raw:
   - pins
   properties:
   - type: OpenAPI
@@ -278,6 +317,8 @@ apis:
   humanURL: https://developers.glean.com/api-info/client/getting-started
   baseURL: https://{instance}-be.glean.com/rest/api/v1
   tags:
+  - Search
+  tags_raw:
   - search
   properties:
   - type: OpenAPI
@@ -292,6 +333,8 @@ apis:
   humanURL: https://developers.glean.com/api-info/client/getting-started
   baseURL: https://{instance}-be.glean.com/rest/api/v1
   tags:
+  - Shortcuts
+  tags_raw:
   - shortcuts
   properties:
   - type: OpenAPI
@@ -306,6 +349,8 @@ apis:
   humanURL: https://developers.glean.com/api-info/client/getting-started
   baseURL: https://{instance}-be.glean.com/rest/api/v1
   tags:
+  - Summarize
+  tags_raw:
   - summarize
   properties:
   - type: OpenAPI
@@ -320,6 +365,8 @@ apis:
   humanURL: https://developers.glean.com/api-info/client/getting-started
   baseURL: https://{instance}-be.glean.com/rest/api/v1
   tags:
+  - Tools
+  tags_raw:
   - tools
   properties:
   - type: OpenAPI
@@ -334,6 +381,8 @@ apis:
   humanURL: https://developers.glean.com/api-info/client/getting-started
   baseURL: https://{instance}-be.glean.com/rest/api/v1
   tags:
+  - Verification
+  tags_raw:
   - verification
   properties:
   - type: OpenAPI
