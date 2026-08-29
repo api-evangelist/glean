@@ -4,6 +4,18 @@ description: Glean is an AI-powered work assistant and enterprise search platfor
   sources to provide unified search, generative answers, and autonomous agents grounded in enterprise knowledge. Glean exposes
   a Client API for end-user features (search, chat, agents, answers), an Indexing API for ingesting custom data sources, and
   Admin and Activity APIs for governance and observability.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: free
   onboarding: self-serve
