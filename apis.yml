@@ -185,7 +185,7 @@ apis:
   humanURL: https://developers.glean.com/api-info/client/getting-started
   baseURL: https://{instance}-be.glean.com/rest/api/v1
   tags:
-  - announcements
+  - Announcements
   tags_raw:
   - announcements
   properties:
@@ -313,7 +313,7 @@ apis:
   humanURL: https://developers.glean.com/api-info/client/getting-started
   baseURL: https://{instance}-be.glean.com/rest/api/v1
   tags:
-  - pins
+  - Pins
   tags_raw:
   - pins
   properties:
@@ -361,7 +361,7 @@ apis:
   humanURL: https://developers.glean.com/api-info/client/getting-started
   baseURL: https://{instance}-be.glean.com/rest/api/v1
   tags:
-  - summarize
+  - Summarize
   tags_raw:
   - summarize
   properties:
