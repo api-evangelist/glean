@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Glean Client REST activity announcements API
+  title: Glean Client REST Announcements API
   version: 0.9.0
   description: 'Subset of Glean''s Client REST API. Glean exposes search, chat, agents,
 
@@ -13,9 +13,7 @@ info:
 
     Derived from the public OpenAPI definition published at
 
-    https://gleanwork.github.io/open-api/specs/final/client_rest.yaml
-
-    '
+    https://gleanwork.github.io/open-api/specs/final/client_rest.yaml'
   contact:
     name: Glean Developers
     url: https://developers.glean.com/
@@ -29,12 +27,12 @@ servers:
 security:
 - bearerAuth: []
 tags:
-- name: announcements
+- name: Announcements
 paths:
   /createannouncement:
     post:
       tags:
-      - announcements
+      - Announcements
       summary: Create an announcement
       operationId: createAnnouncement
       responses:
@@ -43,7 +41,7 @@ paths:
   /updateannouncement:
     post:
       tags:
-      - announcements
+      - Announcements
       summary: Update an announcement
       operationId: updateAnnouncement
       responses:
@@ -52,7 +50,7 @@ paths:
   /deleteannouncement:
     post:
       tags:
-      - announcements
+      - Announcements
       summary: Delete an announcement
       operationId: deleteAnnouncement
       responses:

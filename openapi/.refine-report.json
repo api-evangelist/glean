@@ -1,22 +1,7 @@
 {
   "provider": "glean",
   "sources": [
-    "glean-activity-api-openapi.yml",
-    "glean-agents-api-openapi.yml",
-    "glean-announcements-api-openapi.yml",
-    "glean-answers-api-openapi.yml",
-    "glean-chat-api-openapi.yml",
-    "glean-collections-api-openapi.yml",
-    "glean-documents-api-openapi.yml",
-    "glean-governance-api-openapi.yml",
-    "glean-insights-api-openapi.yml",
-    "glean-people-api-openapi.yml",
-    "glean-pins-api-openapi.yml",
-    "glean-search-api-openapi.yml",
-    "glean-shortcuts-api-openapi.yml",
-    "glean-summarize-api-openapi.yml",
-    "glean-tools-api-openapi.yml",
-    "glean-verification-api-openapi.yml"
+    "_original/glean-openapi.yml"
   ],
   "outputs": [
     "glean-activity-api-openapi.yml",
@@ -39,6 +24,27 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "glean-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "glean-activity-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "glean-agents-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "glean-announcements-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "glean-answers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "glean-chat-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "glean-collections-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "glean-documents-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "glean-governance-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "glean-insights-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "glean-people-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "glean-pins-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "glean-search-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "glean-shortcuts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "glean-summarize-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "glean-tools-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "glean-verification-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

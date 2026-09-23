@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Glean Client REST activity answers API
+  title: Glean Client REST Answers API
   version: 0.9.0
   description: 'Subset of Glean''s Client REST API. Glean exposes search, chat, agents,
 
@@ -13,9 +13,7 @@ info:
 
     Derived from the public OpenAPI definition published at
 
-    https://gleanwork.github.io/open-api/specs/final/client_rest.yaml
-
-    '
+    https://gleanwork.github.io/open-api/specs/final/client_rest.yaml'
   contact:
     name: Glean Developers
     url: https://developers.glean.com/
@@ -29,12 +27,12 @@ servers:
 security:
 - bearerAuth: []
 tags:
-- name: answers
+- name: Answers
 paths:
   /createanswer:
     post:
       tags:
-      - answers
+      - Answers
       summary: Create a curated answer
       operationId: createAnswer
       responses:
@@ -43,7 +41,7 @@ paths:
   /editanswer:
     post:
       tags:
-      - answers
+      - Answers
       summary: Edit a curated answer
       operationId: editAnswer
       responses:
@@ -52,7 +50,7 @@ paths:
   /deleteanswer:
     post:
       tags:
-      - answers
+      - Answers
       summary: Delete a curated answer
       operationId: deleteAnswer
       responses:
@@ -61,7 +59,7 @@ paths:
   /getanswer:
     post:
       tags:
-      - answers
+      - Answers
       summary: Get a curated answer by id
       operationId: getAnswer
       responses:
@@ -70,7 +68,7 @@ paths:
   /listanswers:
     post:
       tags:
-      - answers
+      - Answers
       summary: List curated answers
       operationId: listAnswers
       responses:

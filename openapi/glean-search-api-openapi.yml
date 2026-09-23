@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Glean Client REST activity search API
+  title: Glean Client REST Search API
   version: 0.9.0
   description: 'Subset of Glean''s Client REST API. Glean exposes search, chat, agents,
 
@@ -13,9 +13,7 @@ info:
 
     Derived from the public OpenAPI definition published at
 
-    https://gleanwork.github.io/open-api/specs/final/client_rest.yaml
-
-    '
+    https://gleanwork.github.io/open-api/specs/final/client_rest.yaml'
   contact:
     name: Glean Developers
     url: https://developers.glean.com/
@@ -29,12 +27,12 @@ servers:
 security:
 - bearerAuth: []
 tags:
-- name: search
+- name: Search
 paths:
   /search:
     post:
       tags:
-      - search
+      - Search
       summary: Run a unified, permission-aware search across connected sources
       operationId: search
       requestBody:
@@ -55,7 +53,7 @@ paths:
   /adminsearch:
     post:
       tags:
-      - search
+      - Search
       summary: Search across all content (admin scope, bypasses user ACLs)
       operationId: adminSearch
       responses:
@@ -64,7 +62,7 @@ paths:
   /autocomplete:
     post:
       tags:
-      - search
+      - Search
       summary: Get query autocompletion suggestions
       operationId: autocomplete
       responses:
@@ -73,7 +71,7 @@ paths:
   /recommendations:
     post:
       tags:
-      - search
+      - Search
       summary: Get personalized content recommendations for the user
       operationId: recommendations
       responses:
@@ -82,7 +80,7 @@ paths:
   /feed:
     post:
       tags:
-      - search
+      - Search
       summary: Get the user's personalized activity feed
       operationId: feed
       responses:

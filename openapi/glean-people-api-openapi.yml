@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Glean Client REST activity people API
+  title: Glean Client REST People API
   version: 0.9.0
   description: 'Subset of Glean''s Client REST API. Glean exposes search, chat, agents,
 
@@ -13,9 +13,7 @@ info:
 
     Derived from the public OpenAPI definition published at
 
-    https://gleanwork.github.io/open-api/specs/final/client_rest.yaml
-
-    '
+    https://gleanwork.github.io/open-api/specs/final/client_rest.yaml'
   contact:
     name: Glean Developers
     url: https://developers.glean.com/
@@ -29,12 +27,12 @@ servers:
 security:
 - bearerAuth: []
 tags:
-- name: people
+- name: People
 paths:
   /people:
     post:
       tags:
-      - people
+      - People
       summary: Look up people in the knowledge graph
       operationId: people
       responses:
@@ -43,7 +41,7 @@ paths:
   /people/{person_id}/photo:
     get:
       tags:
-      - people
+      - People
       summary: Get a person's profile photo
       operationId: getPersonPhoto
       parameters:

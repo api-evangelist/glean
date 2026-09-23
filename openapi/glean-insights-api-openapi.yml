@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Glean Client REST activity insights API
+  title: Glean Client REST Insights API
   version: 0.9.0
   description: 'Subset of Glean''s Client REST API. Glean exposes search, chat, agents,
 
@@ -13,9 +13,7 @@ info:
 
     Derived from the public OpenAPI definition published at
 
-    https://gleanwork.github.io/open-api/specs/final/client_rest.yaml
-
-    '
+    https://gleanwork.github.io/open-api/specs/final/client_rest.yaml'
   contact:
     name: Glean Developers
     url: https://developers.glean.com/
@@ -29,12 +27,12 @@ servers:
 security:
 - bearerAuth: []
 tags:
-- name: insights
+- name: Insights
 paths:
   /insights:
     post:
       tags:
-      - insights
+      - Insights
       summary: Retrieve insights and analytics
       operationId: insights
       responses:
