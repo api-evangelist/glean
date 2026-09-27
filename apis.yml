@@ -64,99 +64,20 @@ tags_raw:
 - Search
 - Work Assistant
 apis:
-- aid: glean:glean-search-api
-  name: Glean Search API
-  description: >-
-    Run unified semantic and keyword search across all connected enterprise content with permission-aware
-    results, filters, and facets.
-  humanURL: https://developers.glean.com/api-reference/client-api/search
-  baseURL: https://{instance}-be.glean.com/rest/api/v1
-  tags:
-  - Enterprise Search
-  - Search
-  properties:
-  - type: Documentation
-    url: https://developers.glean.com/api-reference/client-api/search
-- aid: glean:glean-chat-api
-  name: Glean Chat API
-  description: >-
-    Multi-turn generative chat over enterprise content with grounded answers, citations, and tool use.
-  humanURL: https://developers.glean.com/api-reference/client-api/chat
-  baseURL: https://{instance}-be.glean.com/rest/api/v1
-  tags:
-  - Chat
-  - Generative AI
-  - RAG
-  properties:
-  - type: Documentation
-    url: https://developers.glean.com/api-reference/client-api/chat
-- aid: glean:glean-agents-api
-  name: Glean Agents API
-  description: >-
-    Build and invoke autonomous agents that reason over enterprise data and perform multi-step workflows
-    on behalf of users.
-  humanURL: https://developers.glean.com/api-reference/client-api/agents
-  baseURL: https://{instance}-be.glean.com/rest/api/v1
-  tags:
-  - Agents
-  - Artificial Intelligence
-  - Workflows
-  tags_raw:
-  - Agents
-  - AI
-  - Workflows
-  properties:
-  - type: Documentation
-    url: https://developers.glean.com/api-reference/client-api/agents
-- aid: glean:glean-people-api
-  name: Glean People API
-  description: >-
-    Look up people in the enterprise knowledge graph including profile, expertise, org chart relationships,
-    and activity.
-  humanURL: https://developers.glean.com/api-reference/client-api/people
-  baseURL: https://{instance}-be.glean.com/rest/api/v1
-  tags:
-  - Directory
-  - People
-  properties:
-  - type: Documentation
-    url: https://developers.glean.com/api-reference/client-api/people
 - aid: glean:glean-activity-api
   name: Glean Activity API
-  description: >-
-    Read and submit activity signals (views, clicks, edits) that improve personalization and ranking across
-    the Glean instance.
+  description: Read and submit activity signals (views, clicks, edits) that improve personalization and
+    ranking across the Glean instance.
   humanURL: https://developers.glean.com/api-reference/client-api/activity
   baseURL: https://{instance}-be.glean.com/rest/api/v1
   tags:
   - Activity
   - Analytics
   - Signals
-  properties:
-  - type: Documentation
-    url: https://developers.glean.com/api-reference/client-api/activity
-- aid: glean:glean-governance-api
-  name: Glean Governance API
-  description: >-
-    Administer governance policies, data classification, and access controls across the Glean instance.
-  humanURL: https://developers.glean.com/api-reference/client-api/governance
-  baseURL: https://{instance}-be.glean.com/rest/api/v1
-  tags:
-  - Admin
-  - Governance
-  - Security
-  properties:
-  - type: Documentation
-    url: https://developers.glean.com/api-reference/client-api/governance
-- aid: glean:glean-activity-api
-  name: Glean activity API
-  description: The activity API from Glean — 2 operation(s) for activity.
-  humanURL: https://developers.glean.com/api-info/client/getting-started
-  baseURL: https://{instance}-be.glean.com/rest/api/v1
-  tags:
-  - Activity
   tags_raw:
   - activity
+  - Analytics
+  - Signals
   properties:
   - type: OpenAPI
     url: openapi/glean-activity-api-openapi.yml
@@ -164,15 +85,23 @@ apis:
     url: https://developers.glean.com/api-info/client/getting-started
   - type: Documentation
     url: https://developers.glean.com/api-info/indexing/getting-started
+  - type: Documentation
+    url: https://developers.glean.com/api-reference/client-api/activity
 - aid: glean:glean-agents-api
-  name: Glean agents API
-  description: The agents API from Glean — 5 operation(s) for agents.
-  humanURL: https://developers.glean.com/api-info/client/getting-started
+  name: Glean Agents API
+  description: Build and invoke autonomous agents that reason over enterprise data and perform multi-step
+    workflows on behalf of users.
+  humanURL: https://developers.glean.com/api-reference/client-api/agents
   baseURL: https://{instance}-be.glean.com/rest/api/v1
   tags:
   - Agents
+  - Artificial Intelligence
+  - Workflows
   tags_raw:
   - agents
+  - Agents
+  - AI
+  - Workflows
   properties:
   - type: OpenAPI
     url: openapi/glean-agents-api-openapi.yml
@@ -180,8 +109,10 @@ apis:
     url: https://developers.glean.com/api-info/client/getting-started
   - type: Documentation
     url: https://developers.glean.com/api-info/indexing/getting-started
+  - type: Documentation
+    url: https://developers.glean.com/api-reference/client-api/agents
 - aid: glean:glean-announcements-api
-  name: Glean announcements API
+  name: Glean Announcements API
   description: The announcements API from Glean — 3 operation(s) for announcements.
   humanURL: https://developers.glean.com/api-info/client/getting-started
   baseURL: https://{instance}-be.glean.com/rest/api/v1
@@ -197,7 +128,7 @@ apis:
   - type: Documentation
     url: https://developers.glean.com/api-info/indexing/getting-started
 - aid: glean:glean-answers-api
-  name: Glean answers API
+  name: Glean Answers API
   description: The answers API from Glean — 5 operation(s) for answers.
   humanURL: https://developers.glean.com/api-info/client/getting-started
   baseURL: https://{instance}-be.glean.com/rest/api/v1
@@ -213,14 +144,19 @@ apis:
   - type: Documentation
     url: https://developers.glean.com/api-info/indexing/getting-started
 - aid: glean:glean-chat-api
-  name: Glean chat API
-  description: The chat API from Glean — 8 operation(s) for chat.
-  humanURL: https://developers.glean.com/api-info/client/getting-started
+  name: Glean Chat API
+  description: Multi-turn generative chat over enterprise content with grounded answers, citations, and
+    tool use.
+  humanURL: https://developers.glean.com/api-reference/client-api/chat
   baseURL: https://{instance}-be.glean.com/rest/api/v1
   tags:
   - Chat
+  - Generative AI
+  - RAG
   tags_raw:
   - chat
+  - Generative AI
+  - RAG
   properties:
   - type: OpenAPI
     url: openapi/glean-chat-api-openapi.yml
@@ -228,8 +164,10 @@ apis:
     url: https://developers.glean.com/api-info/client/getting-started
   - type: Documentation
     url: https://developers.glean.com/api-info/indexing/getting-started
+  - type: Documentation
+    url: https://developers.glean.com/api-reference/client-api/chat
 - aid: glean:glean-collections-api
-  name: Glean collections API
+  name: Glean Collections API
   description: The collections API from Glean — 8 operation(s) for collections.
   humanURL: https://developers.glean.com/api-info/client/getting-started
   baseURL: https://{instance}-be.glean.com/rest/api/v1
@@ -245,7 +183,7 @@ apis:
   - type: Documentation
     url: https://developers.glean.com/api-info/indexing/getting-started
 - aid: glean:glean-documents-api
-  name: Glean documents API
+  name: Glean Documents API
   description: The documents API from Glean — 3 operation(s) for documents.
   humanURL: https://developers.glean.com/api-info/client/getting-started
   baseURL: https://{instance}-be.glean.com/rest/api/v1
@@ -261,14 +199,19 @@ apis:
   - type: Documentation
     url: https://developers.glean.com/api-info/indexing/getting-started
 - aid: glean:glean-governance-api
-  name: Glean governance API
-  description: The governance API from Glean — 3 operation(s) for governance.
-  humanURL: https://developers.glean.com/api-info/client/getting-started
+  name: Glean Governance API
+  description: Administer governance policies, data classification, and access controls across the Glean
+    instance.
+  humanURL: https://developers.glean.com/api-reference/client-api/governance
   baseURL: https://{instance}-be.glean.com/rest/api/v1
   tags:
   - Governance
+  - Admin
+  - Security
   tags_raw:
   - governance
+  - Admin
+  - Security
   properties:
   - type: OpenAPI
     url: openapi/glean-governance-api-openapi.yml
@@ -276,8 +219,10 @@ apis:
     url: https://developers.glean.com/api-info/client/getting-started
   - type: Documentation
     url: https://developers.glean.com/api-info/indexing/getting-started
+  - type: Documentation
+    url: https://developers.glean.com/api-reference/client-api/governance
 - aid: glean:glean-insights-api
-  name: Glean insights API
+  name: Glean Insights API
   description: The insights API from Glean — 1 operation(s) for insights.
   humanURL: https://developers.glean.com/api-info/client/getting-started
   baseURL: https://{instance}-be.glean.com/rest/api/v1
@@ -293,14 +238,17 @@ apis:
   - type: Documentation
     url: https://developers.glean.com/api-info/indexing/getting-started
 - aid: glean:glean-people-api
-  name: Glean people API
-  description: The people API from Glean — 2 operation(s) for people.
-  humanURL: https://developers.glean.com/api-info/client/getting-started
+  name: Glean People API
+  description: Look up people in the enterprise knowledge graph including profile, expertise, org chart
+    relationships, and activity.
+  humanURL: https://developers.glean.com/api-reference/client-api/people
   baseURL: https://{instance}-be.glean.com/rest/api/v1
   tags:
   - People
+  - Directory
   tags_raw:
   - people
+  - Directory
   properties:
   - type: OpenAPI
     url: openapi/glean-people-api-openapi.yml
@@ -308,8 +256,10 @@ apis:
     url: https://developers.glean.com/api-info/client/getting-started
   - type: Documentation
     url: https://developers.glean.com/api-info/indexing/getting-started
+  - type: Documentation
+    url: https://developers.glean.com/api-reference/client-api/people
 - aid: glean:glean-pins-api
-  name: Glean pins API
+  name: Glean Pins API
   description: The pins API from Glean — 5 operation(s) for pins.
   humanURL: https://developers.glean.com/api-info/client/getting-started
   baseURL: https://{instance}-be.glean.com/rest/api/v1
@@ -325,14 +275,17 @@ apis:
   - type: Documentation
     url: https://developers.glean.com/api-info/indexing/getting-started
 - aid: glean:glean-search-api
-  name: Glean search API
-  description: The search API from Glean — 5 operation(s) for search.
-  humanURL: https://developers.glean.com/api-info/client/getting-started
+  name: Glean Search API
+  description: Run unified semantic and keyword search across all connected enterprise content with permission-aware
+    results, filters, and facets.
+  humanURL: https://developers.glean.com/api-reference/client-api/search
   baseURL: https://{instance}-be.glean.com/rest/api/v1
   tags:
   - Search
+  - Enterprise Search
   tags_raw:
   - search
+  - Enterprise Search
   properties:
   - type: OpenAPI
     url: openapi/glean-search-api-openapi.yml
@@ -340,8 +293,10 @@ apis:
     url: https://developers.glean.com/api-info/client/getting-started
   - type: Documentation
     url: https://developers.glean.com/api-info/indexing/getting-started
+  - type: Documentation
+    url: https://developers.glean.com/api-reference/client-api/search
 - aid: glean:glean-shortcuts-api
-  name: Glean shortcuts API
+  name: Glean Shortcuts API
   description: The shortcuts API from Glean — 5 operation(s) for shortcuts.
   humanURL: https://developers.glean.com/api-info/client/getting-started
   baseURL: https://{instance}-be.glean.com/rest/api/v1
@@ -357,7 +312,7 @@ apis:
   - type: Documentation
     url: https://developers.glean.com/api-info/indexing/getting-started
 - aid: glean:glean-summarize-api
-  name: Glean summarize API
+  name: Glean Summarize API
   description: The summarize API from Glean — 1 operation(s) for summarize.
   humanURL: https://developers.glean.com/api-info/client/getting-started
   baseURL: https://{instance}-be.glean.com/rest/api/v1
@@ -373,7 +328,7 @@ apis:
   - type: Documentation
     url: https://developers.glean.com/api-info/indexing/getting-started
 - aid: glean:glean-tools-api
-  name: Glean tools API
+  name: Glean Tools API
   description: The tools API from Glean — 2 operation(s) for tools.
   humanURL: https://developers.glean.com/api-info/client/getting-started
   baseURL: https://{instance}-be.glean.com/rest/api/v1
@@ -389,7 +344,7 @@ apis:
   - type: Documentation
     url: https://developers.glean.com/api-info/indexing/getting-started
 - aid: glean:glean-verification-api
-  name: Glean verification API
+  name: Glean Verification API
   description: The verification API from Glean — 3 operation(s) for verification.
   humanURL: https://developers.glean.com/api-info/client/getting-started
   baseURL: https://{instance}-be.glean.com/rest/api/v1
