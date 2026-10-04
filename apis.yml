@@ -37,6 +37,9 @@ modified: '2026-05-23'
 specificationVersion: '0.23'
 type: Index
 access: 3rd-Party
+x-docs-platform: docusaurus
+x-docs-platform-confidence: medium
+x-docs-platform-checked: 2026-10-03
 tags:
 - Agents
 - Artificial Intelligence
@@ -50,6 +53,7 @@ tags:
 - RAG
 - Search
 - Work Assistant
+- Knowledge Management
 tags_raw:
 - Agents
 - AI
@@ -63,6 +67,7 @@ tags_raw:
 - RAG
 - Search
 - Work Assistant
+- Knowledge Management
 apis:
 - aid: glean:glean-activity-api
   name: Glean Activity API
@@ -360,6 +365,9 @@ apis:
   - type: Documentation
     url: https://developers.glean.com/api-info/indexing/getting-started
 common:
+- type: CapabilityMap
+  url: capabilities/glean-capability-edges.yml
+  name: Glean Business Capability Map
 - type: AgenticAccess
   url: agentic-access/glean-agentic-access.yml
 - type: TrustCenter
