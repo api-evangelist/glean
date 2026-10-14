@@ -2,6 +2,7 @@ generated: '2026-10-13'
 method: searched
 checked:
 - https://aws.amazon.com/marketplace/
+- https://marketplace.atlassian.com/
 marketplace_apps: []
 edges:
 - partner_name: AWS Marketplace
@@ -20,3 +21,24 @@ edges:
   seller_name: Glean
   detected_by: sweep-cloud-marketplaces.py
   detected: '2026-10-13'
+- partner_name: Atlassian Marketplace
+  partner: atlassian
+  partner_match: aggregator
+  type: marketplace
+  marketplace: atlassian
+  channel: partner-built
+  relationship: platform-app
+  direction: third-party
+  evidence: https://marketplace.atlassian.com/vendors/1216844/glean-technologies-inc
+  listing_count: 5
+  apps:
+  - Scio Search Crawler for Confluence
+  - Scio Search Crawler for Jira
+  - Glean Activity Extension for Jira Data Center/Server
+  - Glean Activity Extension for Confluence Data Center/Server
+  - Glean Search Crawler For Confluence Data Center
+  publisher_name: Glean Technologies Inc
+  detected_by: sweep-devtools.py
+  detected: '2026-10-14'
+source:
+- https://marketplace.atlassian.com/
