@@ -3,6 +3,7 @@ method: searched
 checked:
 - https://aws.amazon.com/marketplace/
 - https://marketplace.atlassian.com/
+- okta/integrations/okta-integration-edges.yml
 marketplace_apps: []
 edges:
 - partner_name: AWS Marketplace
@@ -40,5 +41,28 @@ edges:
   publisher_name: Glean Technologies Inc
   detected_by: sweep-devtools.py
   detected: '2026-10-14'
+- partner_name: Okta (own)
+  partner: okta
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://www.okta.com/integrations/integrator-2348429_glean_1/
+  mirror_of: okta/integrations/okta-integration-edges.yml
+  apps:
+  - Glean
+  listing_count: 1
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
+  category: Single Sign-On
+  badges:
+  - OKTA_VERIFIED
+  features:
+  - CROSS_APP_ACCESS
+  - OIDC
+  - SAML
 source:
 - https://marketplace.atlassian.com/
