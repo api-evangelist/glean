@@ -5,6 +5,8 @@ checked:
 - https://marketplace.atlassian.com/
 - https://registry.modelcontextprotocol.io/v0/servers
 - okta/integrations/okta-integration-edges.yml
+- slack/integrations/slack-integration-edges.yml
+- zoom/integrations/zoom-integration-edges.yml
 marketplace_apps: []
 edges:
 - partner_name: AWS Marketplace
@@ -96,5 +98,39 @@ edges:
   - namespace-domain
   detected_by: sweep-agent-tools.py
   first_seen: '2026-10-14'
+- partner_name: Slack (own)
+  partner: slack
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://slack.com/marketplace/A097AUHM5AS-glean
+  mirror_of: slack/integrations/slack-integration-edges.yml
+  apps:
+  - Glean
+  listing_count: 1
+  detected: '2026-10-18'
+  detected_by: mirror-platform-listings.py
+  category: Slack app
+- partner_name: Zoom (own)
+  partner: zoom
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://marketplace.zoom.us/apps/PN3rVBK6R0aXBU5Fw2i6aQ
+  mirror_of: zoom/integrations/zoom-integration-edges.yml
+  apps:
+  - Glean Search Crawler for Zoom
+  listing_count: 1
+  detected: '2026-10-18'
+  detected_by: mirror-platform-listings.py
+  category: Zoom app
 source:
 - https://marketplace.atlassian.com/
