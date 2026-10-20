@@ -1,0 +1,66 @@
+{
+  "endpoint": "https://developers.glean.com/mcp",
+  "captured": "2026-10-20",
+  "method": "initialize + tools/list (anonymous, no tool called; roadmap#992)",
+  "protocol_version": "2025-06-18",
+  "server_info": {
+    "name": "glean-developer-docs",
+    "version": "a08ac92"
+  },
+  "result": {
+    "tools": [
+      {
+        "name": "docs_search",
+        "description": "Search the documentation for relevant pages. Returns matching documents ranked by relevance, with URLs, snippets, and matching sections. Use this to find information across all documentation.",
+        "inputSchema": {
+          "type": "object",
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "properties": {
+            "query": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500,
+              "description": "A few search keywords (max 500 characters)"
+            },
+            "limit": {
+              "default": 16,
+              "description": "Maximum number of results to return (1-20, default: 16)",
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 20
+            }
+          },
+          "required": [
+            "query"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "docs_fetch",
+        "description": "Fetch the complete content of a documentation page. Use this after searching to get the full markdown content of a specific page. Also reads Agent Skills: pass a skill:// URI from the server instructions.",
+        "inputSchema": {
+          "type": "object",
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "properties": {
+            "url": {
+              "type": "string",
+              "minLength": 1,
+              "description": "The page to fetch: a URL from search results or a link in a fetched page (e.g., \"https://docs.example.com/docs/getting-started\" or \"/docs/getting-started\"). Add #heading-id to fetch one section, or a skill:// URI from the server instructions"
+            }
+          },
+          "required": [
+            "url"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "openWorldHint": false
+        }
+      }
+    ]
+  }
+}
