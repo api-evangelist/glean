@@ -50,3 +50,12 @@ tool_quality:
   scored: false
   note: Facts from the saved tools/list capture (mcp_tool_quality.py); recorded, not scored. Checks learned
     from Glimind's agent-readiness audit.
+tools:
+- name: docs_search
+  description: Search the documentation for relevant pages. Returns matching documents ranked by relevance,
+    with URLs, snippets, and matching sections. Use this to find information across all documentation.
+- name: docs_fetch
+  description: 'Fetch the complete content of a documentation page. Use this after searching to get the
+    full markdown content of a specific page. Also reads Agent Skills: pass a skill:// URI from the server
+    instructions.'
+tools_count: 2
