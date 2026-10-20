@@ -27,19 +27,6 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
-- slug: glean-okta-own
-  label: Okta (own)
-  partner: okta
-  partner_name: Okta (own)
-  category: Single Sign-On
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://www.okta.com/integrations/integrator-2348429_glean_1/
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
 - slug: glean-mcp-registry
   label: MCP Registry
   partner: mcp
@@ -56,7 +43,20 @@
     registered_name: com.glean/mcp
     register_id: com.glean/mcp
     detected_by: sweep-agent-tools.py
-    detected: '2026-10-15'
+    detected: '2026-10-19'
+  status: not-a-workflow
+  arazzo: null
+- slug: glean-okta-own
+  label: Okta (own)
+  partner: okta
+  partner_name: Okta (own)
+  category: Single Sign-On
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.okta.com/integrations/integrator-2348429_glean_1/
+  source: edge
+  relationship: platform-app
   status: not-a-workflow
   arazzo: null
 - slug: glean-slack-own
@@ -68,6 +68,19 @@
   marketplace: own
   channel: partner-built
   evidence: https://slack.com/marketplace/A097AUHM5AS-glean
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: glean-zendesk-own
+  label: Zendesk (own)
+  partner: zendesk
+  partner_name: Zendesk (own)
+  category: AI and Bots
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.zendesk.com/marketplace/apps/support/922191/glean/
   source: edge
   relationship: platform-app
   status: not-a-workflow
