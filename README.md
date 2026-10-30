@@ -1,4 +1,4 @@
-# Glean (glean)
+# Glean
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,212 +66,162 @@
 
 Glean is an AI-powered work assistant and enterprise search platform that connects to a company's apps and data sources to provide unified search, generative answers, and autonomous agents grounded in enterprise knowledge. Glean exposes a Client API for end-user features (search, chat, agents, answers), an Indexing API for ingesting custom data sources, and Admin and Activity APIs for governance and observability.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/glean/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/glean/refs/heads/main/apis.yml)
+**Areas:** Agents · Artificial Intelligence · Answers · Chat · Connectors · Enterprise Search · Generative AI · Indexing · Knowledge · RAG · Search · Work Assistant
 
-## Scope
+## Glean on APIs.io
 
-- **Type:** Index
-- **Access:** 3rd-Party
+Everything profiled for Glean is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/glean/](https://apis.io/providers/glean/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (16)
 
-- Agents
-- AI
-- Answers
-- Chat
-- Connectors
-- Enterprise Search
-- Generative AI
-- Indexing
-- Knowledge
-- RAG
-- Search
-- Work Assistant
+- [Glean Activity API](https://apis.io/apis/glean/glean-activity-api/) — Read and submit activity signals (views, clicks, edits) that improve personalization and ranking across the Glean instance.
+- [Glean Agents API](https://apis.io/apis/glean/glean-agents-api/) — Build and invoke autonomous agents that reason over enterprise data and perform multi-step workflows on behalf of users.
+- [Glean Announcements API](https://apis.io/apis/glean/glean-announcements-api/) — The announcements API from Glean — 3 operation(s) for announcements.
+- [Glean Answers API](https://apis.io/apis/glean/glean-answers-api/) — The answers API from Glean — 5 operation(s) for answers.
+- [Glean Chat API](https://apis.io/apis/glean/glean-chat-api/) — Multi-turn generative chat over enterprise content with grounded answers, citations, and tool use.
+- [Glean Collections API](https://apis.io/apis/glean/glean-collections-api/) — The collections API from Glean — 8 operation(s) for collections.
+- [Glean Documents API](https://apis.io/apis/glean/glean-documents-api/) — The documents API from Glean — 3 operation(s) for documents.
+- [Glean Governance API](https://apis.io/apis/glean/glean-governance-api/) — Administer governance policies, data classification, and access controls across the Glean instance.
+- [Glean Insights API](https://apis.io/apis/glean/glean-insights-api/) — The insights API from Glean — 1 operation(s) for insights.
+- [Glean People API](https://apis.io/apis/glean/glean-people-api/) — Look up people in the enterprise knowledge graph including profile, expertise, org chart relationships, and activity.
+- [Glean Pins API](https://apis.io/apis/glean/glean-pins-api/) — The pins API from Glean — 5 operation(s) for pins.
+- [Glean Search API](https://apis.io/apis/glean/glean-search-api/) — Run unified semantic and keyword search across all connected enterprise content with permission-aware results, filters, and facets.
+- [Glean Shortcuts API](https://apis.io/apis/glean/glean-shortcuts-api/) — The shortcuts API from Glean — 5 operation(s) for shortcuts.
+- [Glean Summarize API](https://apis.io/apis/glean/glean-summarize-api/) — The summarize API from Glean — 1 operation(s) for summarize.
+- [Glean Tools API](https://apis.io/apis/glean/glean-tools-api/) — The tools API from Glean — 2 operation(s) for tools.
+- [Glean Verification API](https://apis.io/apis/glean/glean-verification-api/) — The verification API from Glean — 3 operation(s) for verification.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-05-23
-- **Modified:** 2026-05-23
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### MCP servers (2)
 
-### Glean Client API
+Model Context Protocol servers that expose the API to agents.
 
-The Glean Client API powers end-user features including search, chat, agents, answers, announcements, collections, documents, insights, summarization, tools, and verification. Calls are made against the customer's Glean instance using a bearer API token.
+- [Moved to /providers/glean/](https://apis.io/servers/glean/glean/)
+- [Moved to /providers/glean/](https://apis.io/servers/glean/glean-2/)
 
-- **Human URL:** [https://developers.glean.com/api-info/client/getting-started](https://developers.glean.com/api-info/client/getting-started)
-- **Base URL:** `https://{instance}-be.glean.com/rest/api/v1`
+#### Agentic access (1)
 
-#### Tags
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- Agents
-- Answers
-- Chat
-- Client
-- Search
-- Summarize
+- [Glean Agentic Access](https://apis.io/agentic-access/glean/glean-agentic-access/)
 
-#### Properties
+#### Collections (17)
 
-- [Documentation](https://developers.glean.com/api-info/client/getting-started)
-- [OpenAPI](https://developers.glean.com/oas/client) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/glean.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/glean.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Postman and Open Collection request collections.
 
-### Glean Indexing API
+- [Glean Client REST API](https://apis.io/collections/glean/open-glean/)
+- [Glean Client REST activity API](https://apis.io/collections/glean/open-glean-activity-api/)
+- [Glean Client REST activity agents API](https://apis.io/collections/glean/open-glean-agents-api/)
+- [Glean Client REST activity announcements API](https://apis.io/collections/glean/open-glean-announcements-api/)
+- [Glean Client REST activity answers API](https://apis.io/collections/glean/open-glean-answers-api/)
+- [Glean Client REST activity chat API](https://apis.io/collections/glean/open-glean-chat-api/)
+- [Glean Client REST activity collections API](https://apis.io/collections/glean/open-glean-collections-api/)
+- [Glean Client REST activity documents API](https://apis.io/collections/glean/open-glean-documents-api/)
+- [Glean Client REST activity governance API](https://apis.io/collections/glean/open-glean-governance-api/)
+- [Glean Client REST activity insights API](https://apis.io/collections/glean/open-glean-insights-api/)
+- [Glean Client REST activity people API](https://apis.io/collections/glean/open-glean-people-api/)
+- [Glean Client REST activity pins API](https://apis.io/collections/glean/open-glean-pins-api/)
+- [Glean Client REST activity search API](https://apis.io/collections/glean/open-glean-search-api/)
+- [Glean Client REST activity shortcuts API](https://apis.io/collections/glean/open-glean-shortcuts-api/)
+- [Glean Client REST activity summarize API](https://apis.io/collections/glean/open-glean-summarize-api/)
+- [Glean Client REST activity tools API](https://apis.io/collections/glean/open-glean-tools-api/)
+- [Glean Client REST activity verification API](https://apis.io/collections/glean/open-glean-verification-api/)
 
-The Glean Indexing API ingests documents, people, and permissions from custom data sources into a Glean instance, enabling search and chat over content that does not have a native Glean connector.
+#### Security (4)
 
-- **Human URL:** [https://developers.glean.com/api-info/indexing/getting-started](https://developers.glean.com/api-info/indexing/getting-started)
-- **Base URL:** `https://{instance}-be.glean.com/rest/api/v1`
+Authentication, trust centre, and vulnerability disclosure.
 
-#### Tags
+- [Glean Authentication](https://apis.io/security/glean/glean-authentication/)
+- [Glean Domain Security](https://apis.io/security/glean/glean-domain-security/)
+- [Glean Trust Center](https://apis.io/security/glean/glean-trust-center/)
+- [Glean Vulnerability Disclosure](https://apis.io/security/glean/glean-vulnerability-disclosure/)
 
-- Connectors
-- Datasources
-- Documents
-- Indexing
-- People
-- Permissions
+#### Plans and pricing (1)
 
-#### Properties
+Published plans, tiers and prices.
 
-- [Documentation](https://developers.glean.com/api-info/indexing/getting-started)
-- [OpenAPI](https://developers.glean.com/oas/indexing) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/glean.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/glean.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Glean Plans Pricing](https://apis.io/plans/glean/glean-plans-pricing/)
 
-### Glean Search API
+#### Rate limits (1)
 
-Run unified semantic and keyword search across all connected enterprise content with permission-aware results, filters, and facets.
+Published request limits.
 
-- **Human URL:** [https://developers.glean.com/api-reference/client-api/search](https://developers.glean.com/api-reference/client-api/search)
-- **Base URL:** `https://{instance}-be.glean.com/rest/api/v1`
+- [Glean Rate Limits](https://apis.io/rate-limits/glean/glean-rate-limits/)
 
-#### Tags
+#### FinOps (1)
 
-- Enterprise Search
-- Search
+What the API costs to run, by operation.
 
-#### Properties
+- [Glean Finops](https://apis.io/finops/glean/glean-finops/)
 
-- [Documentation](https://developers.glean.com/api-reference/client-api/search)
-- [Postman Collection](collections/glean.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/glean.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+## Where to find this API
 
-### Glean Chat API
-
-Multi-turn generative chat over enterprise content with grounded answers, citations, and tool use.
-
-- **Human URL:** [https://developers.glean.com/api-reference/client-api/chat](https://developers.glean.com/api-reference/client-api/chat)
-- **Base URL:** `https://{instance}-be.glean.com/rest/api/v1`
-
-#### Tags
-
-- Chat
-- Generative AI
-- RAG
-
-#### Properties
-
-- [Documentation](https://developers.glean.com/api-reference/client-api/chat)
-- [Postman Collection](collections/glean.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/glean.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Glean Agents API
-
-Build and invoke autonomous agents that reason over enterprise data and perform multi-step workflows on behalf of users.
-
-- **Human URL:** [https://developers.glean.com/api-reference/client-api/agents](https://developers.glean.com/api-reference/client-api/agents)
-- **Base URL:** `https://{instance}-be.glean.com/rest/api/v1`
-
-#### Tags
-
-- Agents
-- AI
-- Workflows
-
-#### Properties
-
-- [Documentation](https://developers.glean.com/api-reference/client-api/agents)
-- [Postman Collection](collections/glean.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/glean.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Glean People API
-
-Look up people in the enterprise knowledge graph including profile, expertise, org chart relationships, and activity.
-
-- **Human URL:** [https://developers.glean.com/api-reference/client-api/people](https://developers.glean.com/api-reference/client-api/people)
-- **Base URL:** `https://{instance}-be.glean.com/rest/api/v1`
-
-#### Tags
-
-- Directory
-- People
-
-#### Properties
-
-- [Documentation](https://developers.glean.com/api-reference/client-api/people)
-- [Postman Collection](collections/glean.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/glean.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Glean Activity API
-
-Read and submit activity signals (views, clicks, edits) that improve personalization and ranking across the Glean instance.
-
-- **Human URL:** [https://developers.glean.com/api-reference/client-api/activity](https://developers.glean.com/api-reference/client-api/activity)
-- **Base URL:** `https://{instance}-be.glean.com/rest/api/v1`
-
-#### Tags
-
-- Activity
-- Analytics
-- Signals
-
-#### Properties
-
-- [Documentation](https://developers.glean.com/api-reference/client-api/activity)
-- [Postman Collection](collections/glean.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/glean.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Glean Governance API
-
-Administer governance policies, data classification, and access controls across the Glean instance.
-
-- **Human URL:** [https://developers.glean.com/api-reference/client-api/governance](https://developers.glean.com/api-reference/client-api/governance)
-- **Base URL:** `https://{instance}-be.glean.com/rest/api/v1`
-
-#### Tags
-
-- Admin
-- Governance
-- Security
-
-#### Properties
-
-- [Documentation](https://developers.glean.com/api-reference/client-api/governance)
-- [Postman Collection](collections/glean.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/glean.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.glean.com/)
-- [Developer](https://developers.glean.com/)
 - [Documentation](https://developers.glean.com/api-info/client/getting-started)
-- [SDK](https://developers.glean.com/sdks)
-- [Git Hub](https://github.com/gleanwork)
-- [Blog](https://www.glean.com/blog)
 - [Pricing](https://www.glean.com/pricing)
-- [Status Page](https://status.glean.com/)
 - [Support](https://help.glean.com/)
-- [Privacy Policy](https://www.glean.com/legal/privacy-policy)
-- [Terms of Service](https://www.glean.com/legal/customer-terms-of-service)
-- [LinkedIn](https://www.linkedin.com/company/glean-technologies/)
 - [Changelog](https://developers.glean.com/changelog)
-- [Integrations](https://www.glean.com/connectors)
-- [L L Ms Txt](https://developers.glean.com/llms.txt)
+- [Blog](https://www.glean.com/blog)
+- [Terms of service](https://www.glean.com/legal/customer-terms-of-service)
+- [Privacy policy](https://www.glean.com/legal/privacy-policy)
+- [Status](https://status.glean.com/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 23.0** — emerging · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 52.6 |
+| Developer ergonomics | 26.2 |
+| Access clarity | 18.4 |
+
+**Agent readiness 28.1** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 20.9** — AI & Biometrics
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/glean/](https://apis.io/providers/glean/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Glean: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/glean/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
